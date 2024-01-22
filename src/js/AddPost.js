@@ -53,13 +53,15 @@ function AddPost() {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+        let userId = sessionStorage.getItem('userId');
+
 
         try {
             const response = await API.post("/posts", {
                 title: post.title,
                 body: post.content,
                 dateCreated: new Date(),
-                id_user: 2,
+                id_user: userId,
                 postComments: '',
                 postLikeReactions: 0,
                 postDislikeReactions: 0,

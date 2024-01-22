@@ -129,6 +129,15 @@
       "password": "$2a$10$Fe2qdp5OH.fCOwS3LN0l0uHuJr/J6JME8dSVrWJmkkaOIKvyK5DI.",
       "birthdayDate": "2024-01-31",
       "gender": "male"
+    },
+    {
+      "id": "21a8",
+      "name": "mati",
+      "surname": "mateo",
+      "email": "mateusz@gmail.com",
+      "password": "$2a$10$TmfJZ7Jfu9id/Z60mDPEi.nPRHkvcRLP/Y1ugZiKFANfGWX2aDlTe",
+      "birthdayDate": "2024-01-22",
+      "gender": "male"
     }
   ],
   "posts": [
@@ -353,6 +362,30 @@
       "postDislikeReactions": 0,
       "postPictures": "mobile-login-concept-illustration_114360-135.avif",
       "tags": []
+    },
+    {
+      "id": "f9c9",
+      "title": "sesja",
+      "body": "sesja nauka",
+      "dateCreated": "2024-01-22T11:33:13.009Z",
+      "id_user": 2,
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "lysy_avatar.jpg",
+      "tags": []
+    },
+    {
+      "id": "db58",
+      "title": "aa",
+      "body": "aaaa",
+      "dateCreated": "2024-01-22T11:35:51.013Z",
+      "id_user": "21a8",
+      "postComments": "",
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "lysy_avatar.jpg",
+      "tags": []
     }
   ],
   "posts_comments": [
@@ -381,6 +414,14 @@
     {
       "id": "b587",
       "picture": "mobile-login-concept-illustration_114360-135.avif"
+    },
+    {
+      "id": "4afe",
+      "picture": "lysy_avatar.jpg"
+    },
+    {
+      "id": "1a44",
+      "picture": "lysy_avatar.jpg"
     }
   ],
   "posts_reactions": [
@@ -413,16 +454,20 @@
     {
       "id": "1",
       "status": "Friends",
-      "date_created": "2022-01-10T14:30:00Z",
       "id_user_from": 1,
       "id_user_to": 2
     },
     {
       "id": "2",
       "status": "Friends",
-      "date_created": "2022-01-11T08:45:00Z",
       "id_user_from": 2,
       "id_user_to": 1
+    },
+    {
+      "id": "3",
+      "status": "Request",
+      "id_user_from": 1,
+      "id_user_to": 3
     }
   ]
 }

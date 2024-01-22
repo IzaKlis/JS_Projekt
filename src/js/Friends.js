@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import API from "./API";
 
 const Friends = () => {
     const [filter, setFilter] = useState('');
     const [count, setCount] = useState(0);
     const [friends, setFriends] = useState([]);
     const [requests, setRequests] = useState([]);
+    const [users, setUsers] = useState([]);
     const [search, setSearch] = useState('');
 
     const handleFilterChange = (e) => {
@@ -24,18 +25,29 @@ const Friends = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get("api/users/friends");
-            setFriends(response.data);
+            const response = await API.get("/users_relations");
+            const relations = response.data;
+            const friendsList = relations.filter(relation => relation.status === "Friends");
+            const requestsList = relations.filter(relation => relation.status === "Request");
+
+            setFriends(friendsList);
+            setRequests(requestsList);
         } catch (error) {
-            console.error('Error while fetching data', error);
+            console.error('Error while fetching users_relations data', error);
+        }
+        try {
+            const response = await API.get("/users");
+            const relations = response.data;
+            const friendsList = relations.filter(relation => relation.status === "Friends");
+            const requestsList = relations.filter(relation => relation.status === "Request");
+
+            setFriends(friendsList);
+            setRequests(requestsList);
+        } catch (error) {
+            console.error('Error while fetching users_relations data', error);
         }
 
-        try {
-            const response = await axios.get("api/users/getRequests");
-            setRequests(response.data);
-        } catch (error) {
-            console.error('Error while fetching data', error);
-        }
+
     };
 
     useEffect(() => {
@@ -78,9 +90,9 @@ const Friends = () => {
                     <ul>
                         {friends.map(friend => (
                             <li key={friend.id}>
-                                {`${friend.name} ${friend.surename}`}
+                                {`${friend.name} ${friend.surname}`}
                                 <button
-                                    type="button"
+                                    type="button"   
                                     onClick={() => handleRemoveFriend(friend.id)}>
                                     Remove
                                 </button>
