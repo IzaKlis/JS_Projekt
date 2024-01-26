@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Piotr",
       "surname": "Kowalski",
       "email": "piotrK@wp.pl",
@@ -9,16 +9,10 @@
       "about": "Opis profilu Jana",
       "picture": "images/jan_kowalski.png",
       "birthDate": "1990-12-31",
-      "gender": "Men",
-      "userRelationsFrom": [],
-      "userRelationsTo": [],
-      "posts": [
-        1,
-        2
-      ]
+      "gender": "Men"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Ewelina",
       "surname": "Czajkowska",
       "email": "ewelinaC@wp.pl",
@@ -26,15 +20,10 @@
       "about": "Opis profilu Eweliny",
       "picture": "images/jan_kowalski.png",
       "birthDate": "2002-12-31",
-      "gender": "Women",
-      "userRelationsFrom": [],
-      "userRelationsTo": [],
-      "posts": [
-        3
-      ]
+      "gender": "Women"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Karol",
       "surname": "Karolak",
       "email": "nowy@wp.pl",
@@ -43,95 +32,7 @@
       "gender": "male"
     },
     {
-      "id": "4",
-      "name": "Karol",
-      "surname": "Karolak",
-      "email": "nowy22@wp.pl",
-      "password": "test",
-      "birthdayDate": "2024-01-31",
-      "gender": "male"
-    },
-    {
-      "id": "5",
-      "name": "Ala",
-      "surname": "Kot",
-      "email": "test123@wp.pl",
-      "password": "proste",
-      "birthdayDate": "2024-01-17",
-      "gender": "female"
-    },
-    {
-      "id": "6",
-      "name": "Alicja",
-      "surname": "Kot",
-      "email": "ala@wp.pl",
-      "password": "ala",
-      "birthdayDate": "2024-01-26",
-      "gender": "female"
-    },
-    {
-      "id": "7",
-      "name": "Ela",
-      "surname": "Polik",
-      "email": "123@123.pl",
-      "password": "123",
-      "birthdayDate": "2024-01-11",
-      "gender": "female"
-    },
-    {
-      "id": "560e",
-      "name": "Izabela",
-      "surname": "Klis",
-      "email": "iza@wp.pl",
-      "password": "password",
-      "birthdayDate": "2024-01-20",
-      "gender": "female"
-    },
-    {
-      "id": "a3e2",
-      "name": "Ala",
-      "surname": "Alanka",
-      "email": "alicja@gmail.com",
-      "password": "ala",
-      "birthdayDate": "2024-01-31",
-      "gender": "female"
-    },
-    {
-      "id": "2696",
-      "name": "Kasia",
-      "surname": "Papuga",
-      "email": "kasix@wp.pl",
-      "password": "$2a$10$WgOFN7XjJjIwoO9NaL7ubuFM0X/VLsRanJUsjl4lryDpO6YT1b4J.",
-      "birthdayDate": "2024-01-04",
-      "gender": "female"
-    },
-    {
-      "email": "email23@wp.pl",
-      "about": "Podaje about",
-      "id": "aec6"
-    },
-    {
-      "id": "d05d",
-      "name": "Ernest",
-      "surname": "Adams",
-      "email": "erni123@wp.pl",
-      "password": "$2a$10$.j3wrTfTS8hvmXUreFT.J.j7gDZcxZk/OaYXz0awGjzc1q881V4PS",
-      "birthdayDate": "2024-01-12",
-      "gender": "male",
-      "about": "Opis profilu",
-      "picture": null
-    },
-    {
-      "id": "56e8",
-      "name": "Koral",
-      "surname": "Koral",
-      "email": "cola@cola.pl",
-      "password": "$2a$10$Fe2qdp5OH.fCOwS3LN0l0uHuJr/J6JME8dSVrWJmkkaOIKvyK5DI.",
-      "birthdayDate": "2024-01-31",
-      "gender": "male"
-    },
-    {
-      "id": "21a8",
+      "id": 21,
       "name": "mati",
       "surname": "mateo",
       "email": "mateusz@gmail.com",
@@ -142,7 +43,7 @@
   ],
   "posts": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Wakacje",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
@@ -160,7 +61,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Ferie",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
@@ -175,7 +76,7 @@
       ]
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Test",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-33 00:00:00",
@@ -390,7 +291,7 @@
   ],
   "posts_comments": [
     {
-      "id": "1",
+      "id": 1,
       "content": "Comment on the sample post",
       "date_created": "2022-01-07T10:00:00Z",
       "id_post": 1,
@@ -399,16 +300,16 @@
   ],
   "posts_pictures": [
     {
-      "id": "1",
+      "id": 1,
       "picture": null,
       "id_post": 1
     },
     {
-      "id": "2",
+      "id": 2,
       "picture": "avatar.jpg"
     },
     {
-      "id": "3",
+      "id": 3,
       "picture": "avatar.jpg"
     },
     {
@@ -426,7 +327,7 @@
   ],
   "posts_reactions": [
     {
-      "id": "1",
+      "id": 1,
       "type": "Like",
       "date_created": "2022-01-08T08:30:00Z",
       "id_post": 1,
@@ -435,7 +336,7 @@
   ],
   "tags": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Food",
       "posts": [
         1,
@@ -443,7 +344,7 @@
       ]
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Sport",
       "posts": [
         2
@@ -452,22 +353,54 @@
   ],
   "users_relations": [
     {
-      "id": "1",
+      "id": 1,
+      "user_id": 2,
       "status": "Friends",
-      "id_user_from": 1,
-      "id_user_to": 2
+      "userRelationsFrom": 1,
+      "userRelationsTo": 2
     },
     {
-      "id": "2",
+      "id": 2,
+      "user_id": 1,
       "status": "Friends",
-      "id_user_from": 2,
-      "id_user_to": 1
+      "userRelationsFrom": 2,
+      "userRelationsTo": 1
     },
     {
-      "id": "3",
+      "id": 3,
+      "user_id": 3,
       "status": "Request",
-      "id_user_from": 1,
-      "id_user_to": 3
+      "userRelationsFrom": 1,
+      "userRelationsTo": 3
+    },
+    {
+      "id": 4,
+      "user_id": 21,
+      "status": "Request",
+      "userRelationsFrom": 1,
+      "userRelationsTo": 21
+    },
+    {
+      "id": 5,
+      "user_id": 21,
+      "status": "Request",
+      "userRelationsFrom": 2,
+      "userRelationsTo": 21
+    },
+    {
+      "id": 6,
+      "user_id": 1,
+      "status": "Request",
+      "userRelationsFrom": 21,
+      "userRelationsTo": 1
+    },
+    {
+      "id": 7,
+      "user_id": 21,
+      "status": "Friends",
+      "userRelationsFrom": 21,
+      "userRelationsTo": 3
     }
   ]
+  
 }

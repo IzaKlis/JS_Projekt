@@ -1,22 +1,41 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import API from "./API";
 
 const Friends = () => {
     const [filter, setFilter] = useState('');
-    const [count, setCount] = useState(0);
-    const [friends, setFriends] = useState([]);
-    const [requests, setRequests] = useState([]);
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState('');
+    const [friends, setFriends] = useState([]);
+    const [requests, setRequests] = useState([]);
+    const [relations, setRelations] = useState([]);
+    let actualUserId = parseInt(sessionStorage.getItem('userId'));
 
     const handleFilterChange = (e) => {
         setFilter(e.target.value);
     };
 
-    const handleAcceptFriend = async (friendId) => {
+    const handleAcceptFriend = async (request) => {
+        try {
+            console.log(request)
+            // Wykonaj zapytanie PUT
+            const response = await API.put('/users_relations?id=' + request.id, request);
+
+            console.log('Zaktualizowano obiekt request:', response.data);
+        } catch (error) {
+            console.error('Błąd podczas aktualizacji obiektu request:', error);
+        }
     };
 
-    const handleRemoveFriend = async (friendId) => {
+    const handleRemoveFriend = async (id) => {
+        try {
+            console.log(id)
+            // Wykonaj zapytanie DELETE
+            const response = await API.delete('/users_relations?id=' + id);
+
+            console.log('Zaktualizowano obiekt request:', response.data);
+        } catch (error) {
+            console.error('Błąd podczas aktualizacji obiektu request:', error);
+        }
     };
 
     const handleSearchChange = (e) => {
@@ -25,34 +44,48 @@ const Friends = () => {
 
     const fetchData = async () => {
         try {
-            const response = await API.get("/users_relations");
-            const relations = response.data;
-            const friendsList = relations.filter(relation => relation.status === "Friends");
-            const requestsList = relations.filter(relation => relation.status === "Request");
+            const usersTmp = await API.get("/users");
+            setUsers(usersTmp.data);
 
-            setFriends(friendsList);
-            setRequests(requestsList);
+            console.log("XDu")
+
         } catch (error) {
-            console.error('Error while fetching users_relations data', error);
+            console.error('Error while fetching data', error);
         }
         try {
-            const response = await API.get("/users");
-            const relations = response.data;
-            const friendsList = relations.filter(relation => relation.status === "Friends");
-            const requestsList = relations.filter(relation => relation.status === "Request");
 
-            setFriends(friendsList);
-            setRequests(requestsList);
+
+
+            const relationsTmp = await API.get("/users_relations");
+            setRelations(relationsTmp.data);
+            console.log("XDr")
+            //requests
+            const userRRelations = relations.filter(item => item.user_id === actualUserId && item.status === "Request");
+            const fullRUserRelations = userRRelations.map(item => ({
+                ...item,
+                userRelationsFrom: users.find(itemUser => itemUser.id === item.userRelationsFrom)
+            }));
+            setRequests(fullRUserRelations);
+
+            //friends
+            const userFRelations = relations.filter(item => item.user_id === actualUserId && item.status === "Friends");
+            const fullFUserRelations = userFRelations.map(item => ({
+                ...item,
+                userRelationsFrom: users.find(itemUser => itemUser.id === item.userRelationsFrom)
+            }));
+            setFriends(fullFUserRelations);
+
+
         } catch (error) {
-            console.error('Error while fetching users_relations data', error);
+            console.error('Error while fetching data', error);
         }
-
 
     };
 
+
     useEffect(() => {
         fetchData();
-    }, []);
+    },[]);
 
 
     return (
@@ -66,15 +99,15 @@ const Friends = () => {
             </form>
             <div>
                 <h2>Requests:</h2>
-                {Array.isArray(requests) && requests.length > 0 ? (
+                {requests.length > 0 ? (
                     <ul>
-                        {requests.map(request => (
-                            <li key={request.id}>
-                                {`${request.name} ${request.surename}`}
+                        {requests.map(item => (
+                            <li key={item.id}>
+                                {`${item.userRelationsFrom.name} ${item.userRelationsFrom.surname}`}
                                 <button
                                     type="button"
                                     variant="info"
-                                    onClick={() => handleAcceptFriend(request.id)}>
+                                    onClick={() => handleAcceptFriend(item.id)}>
                                     Accept
                                 </button>
                             </li>
@@ -83,6 +116,7 @@ const Friends = () => {
                 ) : (
                     <p>No invites</p>
                 )}
+
             </div>
             <div>
                 <h2>Friends List:</h2>
@@ -90,9 +124,9 @@ const Friends = () => {
                     <ul>
                         {friends.map(friend => (
                             <li key={friend.id}>
-                                {`${friend.name} ${friend.surname}`}
+                                {`${friend.userRelationsFrom.name} ${friend.userRelationsFrom.surname}`}
                                 <button
-                                    type="button"   
+                                    type="button"
                                     onClick={() => handleRemoveFriend(friend.id)}>
                                     Remove
                                 </button>
