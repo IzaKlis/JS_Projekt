@@ -45,33 +45,23 @@ const Friends = () => {
     const fetchData = async () => {
         try {
             const usersTmp = await API.get("/users");
-            setUsers(usersTmp.data);
-
-            console.log("XDu")
-
-        } catch (error) {
-            console.error('Error while fetching data', error);
-        }
-        try {
-
-
-
             const relationsTmp = await API.get("/users_relations");
+
+            setUsers(usersTmp.data);
             setRelations(relationsTmp.data);
-            console.log("XDr")
-            //requests
-            const userRRelations = relations.filter(item => item.user_id === actualUserId && item.status === "Request");
+
+
+            const userRRelations = relations.filter(item => parseInt(item.user_id) === actualUserId && item.status === "Request");
             const fullRUserRelations = userRRelations.map(item => ({
                 ...item,
-                userRelationsFrom: users.find(itemUser => itemUser.id === item.userRelationsFrom)
+                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom)
             }));
             setRequests(fullRUserRelations);
 
-            //friends
-            const userFRelations = relations.filter(item => item.user_id === actualUserId && item.status === "Friends");
+            const userFRelations = relations.filter(item => parseInt(item.user_id) === actualUserId && item.status === "Friends");
             const fullFUserRelations = userFRelations.map(item => ({
                 ...item,
-                userRelationsFrom: users.find(itemUser => itemUser.id === item.userRelationsFrom)
+                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom)
             }));
             setFriends(fullFUserRelations);
 
@@ -85,7 +75,8 @@ const Friends = () => {
 
     useEffect(() => {
         fetchData();
-    },[]);
+        console.log("fetchdata")
+    },[fetchData()]);
 
 
     return (
