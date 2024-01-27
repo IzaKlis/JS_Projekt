@@ -25,6 +25,12 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.home-post-author{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
 .home-post-title {
     font-size: 1.2em;
     font-weight: bold;
@@ -73,6 +79,22 @@ body{
 .home-comment-button {
     background-color: #bab9b9;
     color: #fff;
+    width: 15%;
+}
+
+.home-comment-field{
+    width: 50%;
+    height: 100px;
+    text-align: left;
+    text-wrap: normal;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.home-comment-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
 .home-search-container {
@@ -441,3 +463,54 @@ body{
 }
 
 
+/* User-Profile */
+.user-profile-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.user-profile-h1 {
+    text-align: center;
+}
+
+.user-profile-h2 {
+    margin-top: 20px;
+}
+
+.user-profile-label {
+    font-weight: bold;
+}
+
+.user-profile-span {
+    color: red;
+}
+
+.user-profile-img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-profile-label[for="upload-image"] {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-profile-label[for="upload-image"]:hover {
+    background-color: #0056b3;
+}
+
+.user-profile-input[type="file"] {
+    display: none;
+}

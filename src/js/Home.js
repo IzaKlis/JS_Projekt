@@ -108,8 +108,7 @@ const Home = () => {
                         <img src={require(`../images/avatar.jpg`/*${post.postPictures}*/)} alt="logo" height={100}/>
                         <div>
                             <p className="home-post-title">{post.title}</p>
-                            <p>{findUserName(post.id_user)}</p>
-                            <button>jakies przejscie do innego użytkownika</button>
+                            <Link className="home-post-author" to={"/profile/"+post.id_user}> <p>{findUserName(post.id_user)}</p></Link>
                         </div>
                         <div className="home-post-body">
                             <p>{post.body}</p>
@@ -129,9 +128,21 @@ const Home = () => {
                                         className="home-dislike-button">
                                     Dislike ({post.postDislikeReactions})
                                 </button>
-                                <button onClick={() => handleComment(post.id)} className="home-comment-button">
+                                <div className="home-comment">
+                                    <p>Pętla po komentarzach w bazie danych trzeba zrobić i zapisywanie treści komentarza i usera do db</p>
+                                    {/*<img src=user image/>*/}
+                                    {/*<p>treść</p>*/}
+
+                                </div>
+                                <form className="home-comment-form" onSubmit={handleComment(post.id)}>
+                                   <textarea
+                                       className={"home-comment-field"}
+                                   placeholder={"Add your comment"}>
+                                   </textarea>
+                                <button type={"submit"} className="home-comment-button">
                                     Comment
                                 </button>
+                                </form>
                             </div>
                         </div>
                     </div>
