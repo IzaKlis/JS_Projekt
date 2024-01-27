@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import API from "./API";
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -8,10 +8,10 @@ const Home = () => {
     const [tags, setTags] = useState([]);
     const [search, setSearch] = useState('');
     const navigate = useNavigate();
+    let userId = sessionStorage.getItem('userId');
 
 
     useEffect(() => {
-        let userId = sessionStorage.getItem('userId');
         if (userId === " " || userId == null) {
             navigate("/login");
         }

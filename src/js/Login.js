@@ -59,8 +59,10 @@ const Login = () => {
             surname: surname,
             email: email,
             password: hashedPassword,
+            about: " ",
             birthdayDate: birthDate,
-            gender: gender
+            gender: gender,
+            picture: " "
         }
         try {
             const response = await API.post('/users', requestBody);

@@ -38,7 +38,8 @@
       "email": "mateusz@gmail.com",
       "password": "$2a$10$TmfJZ7Jfu9id/Z60mDPEi.nPRHkvcRLP/Y1ugZiKFANfGWX2aDlTe",
       "birthdayDate": "2024-01-22",
-      "gender": "male"
+      "gender": "male",
+      "picture": null
     }
   ],
   "posts": [
@@ -51,8 +52,8 @@
       "postComments": [
         1
       ],
-      "postLikeReactions": 12,
-      "postDislikeReactions": 15,
+      "postLikeReactions": 13,
+      "postDislikeReactions": 16,
       "postPictures": [
         1
       ],
