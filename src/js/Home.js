@@ -132,9 +132,6 @@ const Home = () => {
                                 <button onClick={() => handleComment(post.id)} className="home-comment-button">
                                     Comment
                                 </button>
-                                <button type="button" className="home-save-button">
-                                    Save? Maybe
-                                </button>
                             </div>
                         </div>
                     </div>

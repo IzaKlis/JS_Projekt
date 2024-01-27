@@ -6,6 +6,7 @@ const Friends = () => {
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState('');
     const [friends, setFriends] = useState([]);
+    const [addFriends, setAddFriends] = useState([]);
     const [requests, setRequests] = useState([]);
     const [relations, setRelations] = useState([]);
     let actualUserId = parseInt(sessionStorage.getItem('userId'));
@@ -14,24 +15,20 @@ const Friends = () => {
         setFilter(e.target.value);
     };
 
-    const handleAcceptFriend = async (request) => {
+    const handleAcceptFriend = async (id) => {
         try {
-            console.log(request)
-            // Wykonaj zapytanie PUT
-            const response = await API.put('/users_relations?id=' + request.id, request);
-
+            const response = await API.patch('/users_relations/' + id, { status: 'Friends' });
             console.log('Zaktualizowano obiekt request:', response.data);
         } catch (error) {
             console.error('Błąd podczas aktualizacji obiektu request:', error);
         }
     };
 
+
     const handleRemoveFriend = async (id) => {
         try {
             console.log(id)
-            // Wykonaj zapytanie DELETE
             const response = await API.delete('/users_relations?id=' + id);
-
             console.log('Zaktualizowano obiekt request:', response.data);
         } catch (error) {
             console.error('Błąd podczas aktualizacji obiektu request:', error);
@@ -65,6 +62,12 @@ const Friends = () => {
             }));
             setFriends(fullFUserRelations);
 
+            const usersWithoutRelations = users.filter(user => {
+                const isFriend = friends.some(friend => friend.userRelationsFrom.id === user.id);
+                const isRequestSent = requests.some(request => request.userRelationsFrom.id === user.id);
+                return !isFriend && !isRequestSent && user.id !== actualUserId;
+            });
+            setAddFriends(usersWithoutRelations);
 
         } catch (error) {
             console.error('Error while fetching data', error);
@@ -73,10 +76,11 @@ const Friends = () => {
     };
 
 
+
     useEffect(() => {
         fetchData();
         console.log("fetchdata")
-    },[fetchData()]);
+    },[users]);
 
 
     return (
@@ -126,6 +130,24 @@ const Friends = () => {
                     </ul>
                 ) : (
                     <p>No friends</p>
+                )}
+            </div>
+            <div>
+                <h2>Add Friend:</h2>
+                {addFriends.length > 0 ? (
+                    <ul>
+                        {addFriends.map(user => (
+                            <li key={user.id}>
+                                {`${user.name} ${user.surname}`}
+                                <button
+                                    type="button">
+                                    Add Friend
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No users to add</p>
                 )}
             </div>
         </div>

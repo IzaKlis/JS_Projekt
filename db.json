@@ -374,25 +374,11 @@
       "userRelationsTo": 3
     },
     {
-      "id": "4",
-      "user_id": 21,
-      "status": "Request",
-      "userRelationsFrom": 1,
-      "userRelationsTo": 21
-    },
-    {
-      "id": "5",
-      "user_id": 21,
-      "status": "Request",
-      "userRelationsFrom": 2,
-      "userRelationsTo": 21
-    },
-    {
       "id": "6",
-      "user_id": 1,
+      "user_id": "3",
       "status": "Request",
-      "userRelationsFrom": 21,
-      "userRelationsTo": 1
+      "userRelationsFrom": 3,
+      "userRelationsTo": 21
     },
     {
       "id": "7",
