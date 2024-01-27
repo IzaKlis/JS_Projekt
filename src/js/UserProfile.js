@@ -1,12 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import API from "./API";
 
 const User_Profile = () => {
     const [userData, setUserData] = useState(null);
-    const { userId } = useParams();
+    const {userId} = useParams();
+    const [allUsers, setAllUsers] = useState([]);
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        if (!userId) {
+            const storedUserId = sessionStorage.getItem("userId");
+            if (storedUserId) {
+                fetchData(storedUserId);
+            } else {
+                console.error('User ID not found in sessionStorage');
+            }
+        } else {
+            fetchData(userId);
+        }
+    }, [userId]);
 
     const fetchData = async (id) => {
+        try {
+            const response = await API.get("/posts");
+            const currentUserPosts = response.data.filter(post => post.id_user === userId);
+            setPosts(currentUserPosts);
+            console.log(currentUserPosts);
+        } catch (error) {
+            console.error('Error while fetching posts data', error);
+        }
+        try {
+            const response = await API.get("/users");
+            setAllUsers(response.data);
+        } catch (error) {
+            console.error('Error while fetching users data', error);
+        }
         try {
             const response = await API.get(`/users/${id}`);
             setUserData(response.data);
@@ -15,71 +44,88 @@ const User_Profile = () => {
         }
     };
 
-    useEffect(() => {
-        // Check if userId is not provided as a URL parameter
-        if (!userId) {
-            // Retrieve userId from sessionStorage
-            const storedUserId = sessionStorage.getItem("userId");
+    const findUserName = (iduser) => {
+        const user = allUsers.find((user) => user.id == userId);
+        return user ? user.name + " " + user.surname : 'Unknown User';
+    };
 
-            // Check if storedUserId exists before fetching data
-            if (storedUserId) {
-                fetchData(storedUserId);
-            } else {
-                console.error('User ID not found in sessionStorage');
-            }
-        } else {
-            // If userId is provided as a URL parameter, fetch data
-            fetchData(userId);
-        }
-    }, [userId]);
     return (
-        <div className="user-profile-container">
-            <h1 className="user-profile-h1">User Profile</h1>
-            <h2 className="user-profile-h2">User data</h2>
-            {userData && (
-                <div>
-                    <div>
-                        <label className="user-profile-label">Email:</label>
-                        <span className="user-profile-span">{userData.email}</span>
-                    </div>
-                    <div>
-                        <label className="user-profile-label">Name:</label>
-                        <span className="user-profile-span">{userData.name}</span>
-                    </div>
-                    <div>
-                        <label className="user-profile-label">Surname:</label>
-                        <span className="user-profile-span">{userData.surname}</span>
-                    </div>
-                    <div>
-                        <label className="user-profile-label">Birth date:</label>
-                        <span className="user-profile-span">{userData.birthdayDate}</span>
-                    </div>
-                    <div>
-                        <label className="user-profile-label">Gender:</label>
-                        <span className="user-profile-span">{userData.gender}</span>
-                    </div>
-                    <div>
-                        <label className="user-profile-label">About:</label>
-                        <span className="user-profile-span">{userData.about}</span>
-                    </div>
-                </div>
-            )}
-            <div>
-                <label className="user-profile-label">Profile picture:</label>
+        <>
+            <div className="user-profile-container">
                 {userData && (
-                    <img className="user-profile-img" src={userData.picture} alt="Profile"/>
+                    <div>
+                        <h1 className="user-profile-h1">User Profile</h1>
+                        <h2 className="user-profile-h2">User data</h2>
+                        <div>
+                            <label className="user-profile-label">Name:</label>
+                            <span className="user-profile-span">{userData.name}</span>
+                        </div>
+                        <div>
+                            <label className="user-profile-label">Surname:</label>
+                            <span className="user-profile-span">{userData.surname}</span>
+                        </div>
+                        <div>
+                            <label className="user-profile-label">Birth date:</label>
+                            <span className="user-profile-span">{userData.birthdayDate}</span>
+                        </div>
+                        <div>
+                            <label className="user-profile-label">Gender:</label>
+                            <span className="user-profile-span">{userData.gender}</span>
+                        </div>
+                        <div>
+                            <label className="user-profile-label">About:</label>
+                            <span className="user-profile-span">{userData.about}</span>
+                        </div>
+                        <div>
+                            <label className="user-profile-label">Profile picture:</label>
+                            {userData && (
+                                <img className="user-profile-img" src={userData.picture} alt="Profile"/>
+                            )}
+                        </div>
+                    </div>
                 )}
             </div>
-
-            {!userId && (
-                <div>
-                    <Link to="/editProfile">
-                        <button className="edit-profile-button">Edit Profile</button>
-                    </Link>
-                </div>
-            )}
-        </div>
+            <div className="home-container">
+                {posts.map((post, index) => (
+                    <div key={post.id} className="home-post">
+                        {/* Display post information */}
+                        <img src={require(`../images/avatar.jpg` /* ${post.postPictures} */)} alt="logo" height={100}/>
+                        <div>
+                            <p className="home-post-title">{post.title}</p>
+                            <Link className="home-post-author" to={"/profile/" + post.id_user}>
+                                <p>{findUserName(post.id_user)}</p>
+                            </Link>
+                        </div>
+                        <div className="home-post-buttons">
+                            <div>
+                                <button className="home-like-button">
+                                    Like ({post.postLikeReactions})
+                                </button>
+                                <button className="home-dislike-button">
+                                    Dislike ({post.postDislikeReactions})
+                                </button>
+                                <div className="home-comment">
+                                    <p>Pętla po komentarzach w bazie danych trzeba zrobić i zapisywanie treści
+                                        komentarza i usera do db</p>
+                                </div>
+                                <form className="home-comment-form">
+                                <textarea
+                                    className={"home-comment-field"}
+                                    placeholder={"Add your comment"}>
+                                </textarea>
+                                    <button type={"submit"} className="home-comment-button">
+                                        Comment
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </>
     );
-};
 
+}
 export default User_Profile;
+
+

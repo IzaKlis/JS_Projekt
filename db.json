@@ -93,7 +93,7 @@
       "title": "studia",
       "body": "Projekty do oddania",
       "dateCreated": "2024-01-20T17:42:32.572Z",
-      "id_user": 2,
+      "id_user": 1,
       "postComments": "",
       "postLikeReactions": 0,
       "postDislikeReactions": 0,
@@ -129,7 +129,7 @@
       "title": "asd1",
       "body": "asd1",
       "dateCreated": "2024-01-20T18:05:39.197Z",
-      "id_user": 2,
+      "id_user": "1",
       "postComments": "",
       "postLikeReactions": 0,
       "postDislikeReactions": 0,
@@ -297,6 +297,30 @@
       "date_created": "2022-01-07T10:00:00Z",
       "id_post": 1,
       "id_user": 1
+    },
+    {
+      "id": "b2ec",
+      "content": "Pierwszy komentarz Piotra",
+      "id_post": "1",
+      "id_user": "21"
+    },
+    {
+      "id": "5456",
+      "content": "Baby it's kinda crazy",
+      "id_post": "1",
+      "id_user": "21"
+    },
+    {
+      "id": "ec09",
+      "content": "xdd",
+      "id_post": "1",
+      "id_user": "21"
+    },
+    {
+      "id": "af65",
+      "content": "ALE FAZA",
+      "id_post": "4",
+      "id_user": "21"
     }
   ],
   "posts_pictures": [
