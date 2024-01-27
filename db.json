@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Piotr",
       "surname": "Kowalski",
       "email": "piotrK@wp.pl",
@@ -12,7 +12,7 @@
       "gender": "Men"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Ewelina",
       "surname": "Czajkowska",
       "email": "ewelinaC@wp.pl",
@@ -23,7 +23,7 @@
       "gender": "Women"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Karol",
       "surname": "Karolak",
       "email": "nowy@wp.pl",
@@ -32,7 +32,7 @@
       "gender": "male"
     },
     {
-      "id": 21,
+      "id": "21",
       "name": "mati",
       "surname": "mateo",
       "email": "mateusz@gmail.com",
@@ -43,7 +43,7 @@
   ],
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Wakacje",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
@@ -51,8 +51,8 @@
       "postComments": [
         1
       ],
-      "postLikeReactions": 7,
-      "postDislikeReactions": 11,
+      "postLikeReactions": 12,
+      "postDislikeReactions": 15,
       "postPictures": [
         1
       ],
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Ferie",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-31 00:00:00",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Test",
       "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
       "dateCreated": "2023-12-33 00:00:00",
@@ -291,7 +291,7 @@
   ],
   "posts_comments": [
     {
-      "id": 1,
+      "id": "1",
       "content": "Comment on the sample post",
       "date_created": "2022-01-07T10:00:00Z",
       "id_post": 1,
@@ -300,16 +300,16 @@
   ],
   "posts_pictures": [
     {
-      "id": 1,
+      "id": "1",
       "picture": null,
       "id_post": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "picture": "avatar.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "picture": "avatar.jpg"
     },
     {
@@ -327,7 +327,7 @@
   ],
   "posts_reactions": [
     {
-      "id": 1,
+      "id": "1",
       "type": "Like",
       "date_created": "2022-01-08T08:30:00Z",
       "id_post": 1,
@@ -336,7 +336,7 @@
   ],
   "tags": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Food",
       "posts": [
         1,
@@ -344,7 +344,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Sport",
       "posts": [
         2
@@ -353,54 +353,53 @@
   ],
   "users_relations": [
     {
-      "id": 1,
+      "id": "1",
       "user_id": 2,
       "status": "Friends",
       "userRelationsFrom": 1,
       "userRelationsTo": 2
     },
     {
-      "id": 2,
+      "id": "2",
       "user_id": 1,
       "status": "Friends",
       "userRelationsFrom": 2,
       "userRelationsTo": 1
     },
     {
-      "id": 3,
+      "id": "3",
       "user_id": 3,
       "status": "Request",
       "userRelationsFrom": 1,
       "userRelationsTo": 3
     },
     {
-      "id": 4,
+      "id": "4",
       "user_id": 21,
       "status": "Request",
       "userRelationsFrom": 1,
       "userRelationsTo": 21
     },
     {
-      "id": 5,
+      "id": "5",
       "user_id": 21,
       "status": "Request",
       "userRelationsFrom": 2,
       "userRelationsTo": 21
     },
     {
-      "id": 6,
+      "id": "6",
       "user_id": 1,
       "status": "Request",
       "userRelationsFrom": 21,
       "userRelationsTo": 1
     },
     {
-      "id": 7,
+      "id": "7",
       "user_id": 21,
       "status": "Friends",
       "userRelationsFrom": 21,
       "userRelationsTo": 3
     }
   ]
-  
 }
