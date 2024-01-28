@@ -321,6 +321,12 @@
       "content": "ALE FAZA",
       "id_post": "4",
       "id_user": "21"
+    },
+    {
+      "id": "9261",
+      "content": "aaa",
+      "id_post": "1",
+      "id_user": "21"
     }
   ],
   "posts_pictures": [
@@ -399,18 +405,11 @@
       "userRelationsTo": 3
     },
     {
-      "id": "6",
-      "user_id": "3",
-      "status": "Request",
-      "userRelationsFrom": 3,
-      "userRelationsTo": 21
-    },
-    {
-      "id": "7",
+      "id": "cb1f",
       "user_id": 21,
       "status": "Friends",
-      "userRelationsFrom": 21,
-      "userRelationsTo": 3
+      "userRelationsFrom": 2,
+      "userRelationsTo": 21
     }
   ]
 }
