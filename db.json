@@ -39,7 +39,9 @@
       "birthdayDate": "2017-01-28",
       "gender": "male",
       "picture": " ",
-      "posts": []
+      "posts": [
+        "f3c0"
+      ]
     }
   ],
   "posts": [
@@ -92,6 +94,17 @@
       "postLikeReactions": 10,
       "postDislikeReactions": 2,
       "postPictures": "https://source.unsplash.com/600x400/?sea"
+    },
+    {
+      "id": "f3c0",
+      "title": "Sesja",
+      "body": "Przed sesja trzeba zaliczyc javascripta ",
+      "dateCreated": "28.01.2024",
+      "id_user": "4653",
+      "postComments": [],
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": []
     }
   ],
   "posts_comments": [
@@ -137,6 +150,12 @@
       "content": "Wow, super!",
       "id_post": "dc36",
       "id_user": "4653"
+    },
+    {
+      "id": "c64f",
+      "content": "oby sie udalo",
+      "id_post": "f3c0",
+      "id_user": "4653"
     }
   ],
   "posts_pictures": [
@@ -172,75 +191,33 @@
   ],
   "posts_reactions": [
     {
-      "id": "aa3c",
+      "id": "a688",
       "type": "like",
       "id_post": "dc36",
       "id_user": "4653"
     },
     {
-      "id": "f07c",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "e336",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "6d05",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "a6bc",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "91a2",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "889b",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "b0cc",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "5214",
-      "type": "like",
+      "id": "cde8",
+      "type": "dislike",
       "id_post": "a11c",
       "id_user": "4653"
     },
     {
-      "id": "b4ca",
+      "id": "e7f6",
       "type": "like",
-      "id_post": "dc36",
+      "id_post": "fb0c",
       "id_user": "4653"
     },
     {
-      "id": "f161",
-      "type": "like",
-      "id_post": "a11c",
+      "id": "e048",
+      "type": "dislike",
+      "id_post": "94c1",
       "id_user": "4653"
     },
     {
-      "id": "3f89",
+      "id": "fad0",
       "type": "like",
-      "id_post": "a11c",
+      "id_post": "12a7",
       "id_user": "4653"
     }
   ],

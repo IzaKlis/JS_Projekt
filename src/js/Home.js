@@ -28,7 +28,6 @@ const Home = () => {
 
             const reactionstmp = await API.get("/posts_reactions");
             setReactions(reactionstmp.data);
-            console.log("Lista reakcji: ", reactionstmp.data)
 
         } catch (error) {
             console.error('Error while fetching data', error);
@@ -46,15 +45,24 @@ const Home = () => {
 
     const handleReaction = async (postId, type) => {
         try {
-            const response = await API.post("/posts_reactions", {
-                type: type,
-                id_post: postId,
-                id_user: userId
-            });
-            fetchData();
-            console.log('Reaction response:', response.data);
-            console.log("LICZBA REAKCJI ", reactions.filter(reaction => reaction.type === "like" && reaction.id_post == postId))
-
+            const existingReaction = reactions.find(
+                reaction => reaction.id_post === postId && reaction.id_user === userId  //sprawdzam czy istnieje zalogowany uzytkownik juz polajkowal ten post
+            );
+            if (!existingReaction) {    //jesli nie polajkowal to dodajemy nowa reakcje
+                const response = await API.post("/posts_reactions", {
+                    type: type,
+                    id_post: postId,
+                    id_user: userId
+                });
+                fetchData();
+                console.log('Reaction response:', response.data);
+            } else if (existingReaction.type != type) { //jezeli polajkowal, ale klika inny przycisk niz wczesniej wybrany to nie cofamy lajka
+                console.log("Inny typ reakcji, wiec nie kasuje")
+            } else {    //jezeli polajkowal, i klika wczesniej wybrany lajk to "cofamy lajka"
+                const deleteResponse = await API.delete(`/posts_reactions/${existingReaction.id}`);
+                fetchData();
+                console.log('Reaction deleted:', deleteResponse.data);
+            }
         } catch (error) {
             console.error('Error while reacting to post', error);
         }
@@ -107,10 +115,10 @@ const Home = () => {
                 <div className="home-post-buttons">
                     <div>
                         <button onClick={() => handleReaction(post.id, "like")} className="home-like-button">
-                            Like ({reactions.filter(reaction => reaction.type === "Like").length})
+                            Like ({reactions.filter(reaction => reaction.type === "like" && reaction.id_post === post.id).length})
                         </button>
                         <button onClick={() => handleReaction(post.id, "dislike")} className="home-dislike-button">
-                            Dislike ({reactions.filter(reaction => reaction.type === "Dislike").length})
+                            Dislike ({reactions.filter(reaction => reaction.type === "dislike" && reaction.id_post === post.id).length})
                         </button>
                         <div className="home-comment">
                             {comments
