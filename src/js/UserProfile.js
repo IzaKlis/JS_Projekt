@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import API from "./API";
 
 const User_Profile = () => {
@@ -7,12 +7,14 @@ const User_Profile = () => {
     const {userId} = useParams();
     const [allUsers, setAllUsers] = useState([]);
     const [posts, setPosts] = useState([]);
+    const [isLoggedUser, setIsLoggedUser] = useState(false);
 
     useEffect(() => {
         if (!userId) {
             const storedUserId = sessionStorage.getItem("userId");
             if (storedUserId) {
                 fetchData(storedUserId);
+                setIsLoggedUser(true);
             } else {
                 console.error('User ID not found in sessionStorage');
             }
@@ -23,31 +25,39 @@ const User_Profile = () => {
 
     const fetchData = async (id) => {
         try {
-            const response = await API.get("/posts");
-            const currentUserPosts = response.data.filter(post => post.id_user === userId);
+            const userResponse = await API.get(`/users/${id}`);
+            setUserData(userResponse.data);
+
+            const userPosts = userResponse.data.posts || [];
+
+            const postsResponse = await API.get("/posts");
+            const currentUserPosts = postsResponse.data.filter(post => userPosts.includes(post.id));
             setPosts(currentUserPosts);
-            console.log(currentUserPosts);
-        } catch (error) {
-            console.error('Error while fetching posts data', error);
-        }
-        try {
-            const response = await API.get("/users");
-            setAllUsers(response.data);
-        } catch (error) {
-            console.error('Error while fetching users data', error);
-        }
-        try {
-            const response = await API.get(`/users/${id}`);
-            setUserData(response.data);
+
         } catch (error) {
             console.error('Error while fetching data', error);
         }
     };
 
-    const findUserName = (iduser) => {
-        const user = allUsers.find((user) => user.id == userId);
-        return user ? user.name + " " + user.surname : 'Unknown User';
+    const handleDeletePost = async (postId,userId) => {
+        try {
+            await API.delete(`/posts/${postId}`);
+
+            setPosts(prevPosts => prevPosts.filter(post => post.id !== postId));
+
+            const updatedUserResponse = await API.get(`/users/${userId}`);
+            const updatedUser = updatedUserResponse.data;
+
+            const updatedUserPosts = updatedUser.posts.filter(userPostId => userPostId !== postId);
+            updatedUser.posts = updatedUserPosts;
+
+            await API.patch(`/users/${userId}`, { posts: updatedUser.posts });
+
+        } catch (error) {
+            console.error('Error while deleting post', error);
+        }
     };
+
 
     return (
         <>
@@ -88,13 +98,15 @@ const User_Profile = () => {
             <div className="home-container">
                 {posts.map((post, index) => (
                     <div key={post.id} className="home-post">
-                        {/* Display post information */}
+                        {isLoggedUser && (
+                            <button className="delete-post-button" onClick={() => handleDeletePost(post.id,userData.id)}>
+                                Delete Post
+                            </button>
+                        )}
                         <img src={require(`../images/avatar.jpg` /* ${post.postPictures} */)} alt="logo" height={100}/>
                         <div>
                             <p className="home-post-title">{post.title}</p>
-                            <Link className="home-post-author" to={"/profile/" + post.id_user}>
-                                <p>{findUserName(post.id_user)}</p>
-                            </Link>
+                                <p>{userData.name} {userData.surname}</p>
                         </div>
                         <div className="home-post-buttons">
                             <div>

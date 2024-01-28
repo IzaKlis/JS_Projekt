@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import API from "./API";
-import {Link, useNavigate} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
     const [users, setUsers] = useState([]);
-    const [tags, setTags] = useState([]);
     const [search, setSearch] = useState('');
-    const navigate = useNavigate();
     const [commentContent, setCommentContent] = useState('');
-    const [comments,setComments]=useState([]);
-    let userId = sessionStorage.getItem('userId');
+    const [comments, setComments] = useState([]);
+    const userId = sessionStorage.getItem('userId');
 
     const handleSearchChange = (e) => {
         setSearch(e.target.value);
@@ -18,29 +16,16 @@ const Home = () => {
 
     const fetchData = async () => {
         try {
-            const response = await API.get("/posts");
-            setPosts(response.data);
-        } catch (error) {
-            console.error('Error while fetching posts data', error);
-        }
+            const poststmp = await API.get("/posts");
+            setPosts(poststmp.data);
 
-        try {
-            const response = await API.get("/users");
-            setUsers(response.data);
+            const userstmp = await API.get("/users");
+            setUsers(userstmp.data);
+
+            const commentstmp = await API.get("/posts_comments");
+            setComments(commentstmp.data);
         } catch (error) {
-            console.error('Error while fetching users data', error);
-        }
-        try {
-            const response = await API.get("/tags");
-            setTags(response.data);
-        } catch (error) {
-            console.error('Error while fetching tags data', error);
-        }
-        try {
-            const response = await API.get("/posts_comments");
-            setComments(response.data);
-        } catch (error) {
-            console.error('Error while fetching tags data', error);
+            console.error('Error while fetching data', error);
         }
     }
 
@@ -55,7 +40,6 @@ const Home = () => {
 
     const handleReaction = async (postId, type) => {
         try {
-            // Pobierz aktualny stan posta
             const response = await API.get(`/posts/${postId}`);
             const currentPost = response.data;
 
@@ -77,11 +61,11 @@ const Home = () => {
 
     const handleComment = async (postId, commentContent) => {
         try {
-            const newComment = {
-                content: commentContent, id_post: postId, id_user: userId
-            };
-            //TODO trzeba wrzucić jeszcze date do komentarza
-            const response = await API.post("/posts_comments", newComment);
+           const response = await API.post("/posts_comments", {
+                content: commentContent,
+                id_post: postId,
+                id_user: userId
+            });
             setCommentContent('');
             fetchData();
         } catch (error) {
@@ -107,22 +91,16 @@ const Home = () => {
         </div>
         <h2>Popular posts:</h2>
         <div>
-
             {filteredPosts.map((post, index) => (<div key={post.id} className="home-post">
-                <img src={require(`../images/avatar.jpg`/*${post.postPictures}*/)} alt="logo" height={100}/>
+                <img className="user-profile-img" src={post.postPictures} alt="PostPicture"/>
                 <div>
                     <p className="home-post-title">{post.title}</p>
                     <Link className="home-post-author" to={"/profile/" + post.id_user}>
                         <p>{findUserName(post.id_user)}</p></Link>
+                    <p>{post.dateCreated}</p>
                 </div>
                 <div className="home-post-body">
                     <p>{post.body}</p>
-                    <ul className="home-post-tags">
-                        {post.tags?.map((tagId, index) => {
-                            const tag = tags.find(tag => tag.id === Number(tagId));  // Dodano konwersję na liczbę
-                            return tag ? <li key={index}> #{tag.name}</li> : null;
-                        })}
-                    </ul>
                 </div>
                 <div className="home-post-buttons">
                     <div>
@@ -134,13 +112,12 @@ const Home = () => {
                             Dislike ({post.postDislikeReactions})
                         </button>
                         <div className="home-comment">
-                            <p>Pętla po komentarzach w bazie danych trzeba</p>
-                            {/*<img src=user image/>*/}
                             {comments
                                 .filter(comment => comment.id_post === post.id)
                                 .map((comment, commentIndex) => (
                                     <div key={commentIndex}>
                                         <p>{comment.content}</p>
+                                        <p>{findUserName(comment.id_user)}</p>
                                     </div>
                                 ))}
                         </div>
@@ -154,7 +131,7 @@ const Home = () => {
                                 value={commentContent}
                                 onChange={(e) => setCommentContent(e.target.value)}
                             />
-                            <button type={"submit"}  className="home-comment-button">
+                            <button type={"submit"} className="home-comment-button">
                                 Comment
                             </button>
                         </form>

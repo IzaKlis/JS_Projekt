@@ -1,416 +1,165 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Piotr",
-      "surname": "Kowalski",
-      "email": "piotrK@wp.pl",
-      "password": "123",
-      "about": "Opis profilu Jana",
-      "picture": "images/jan_kowalski.png",
-      "birthDate": "1990-12-31",
-      "gender": "Men"
+      "id": "7352",
+      "name": "Iza",
+      "surname": "Klis",
+      "email": "iza.klis@example.com",
+      "password": "$2a$10$qruXu20ah5Vqxb1oy19yluSWnpp9i7RYSESQ6Ws6kPGTz2GXc7FCK",
+      "about": "Travel enthusiast, nature lover",
+      "birthdayDate": "1990-05-15",
+      "gender": "female",
+      "picture": "https://randomuser.me/api/portraits/women/1.jpg",
+      "posts": [
+        "dc36",
+        "a11c"
+      ]
     },
     {
-      "id": "2",
-      "name": "Ewelina",
-      "surname": "Czajkowska",
-      "email": "ewelinaC@wp.pl",
-      "password": "456",
-      "about": "Opis profilu Eweliny",
-      "picture": "images/jan_kowalski.png",
-      "birthDate": "2002-12-31",
-      "gender": "Women"
-    },
-    {
-      "id": "3",
+      "id": "8359",
       "name": "Karol",
       "surname": "Karolak",
-      "email": "nowy@wp.pl",
-      "password": "haslo",
-      "birthdayDate": "2024-01-31",
-      "gender": "male"
-    },
-    {
-      "id": "21",
-      "name": "mati",
-      "surname": "mateo",
-      "email": "mateusz@gmail.com",
-      "password": "$2a$10$TmfJZ7Jfu9id/Z60mDPEi.nPRHkvcRLP/Y1ugZiKFANfGWX2aDlTe",
-      "birthdayDate": "2024-01-22",
+      "email": "karol.karolak@example.com",
+      "password": "$2a$10$TQZXn/M.UH3mUtw/AFlG7.W2M2odri5YI698kiYNrc/VBOMgaF2nO",
+      "about": "Adventurous soul, tech geek",
+      "birthdayDate": "1985-10-20",
       "gender": "male",
-      "picture": null
+      "picture": "https://randomuser.me/api/portraits/men/2.jpg",
+      "posts": [
+        "fb0c"
+      ]
     }
   ],
   "posts": [
     {
-      "id": "1",
-      "title": "Wakacje",
-      "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
-      "dateCreated": "2023-12-31 00:00:00",
-      "id_user": 1,
-      "postComments": [
-        1
-      ],
-      "postLikeReactions": 13,
-      "postDislikeReactions": 16,
-      "postPictures": [
-        1
-      ],
-      "tags": [
-        1
-      ]
+      "id": "dc36",
+      "title": "Exploring the Mountains",
+      "body": "Spent the weekend exploring the breathtaking mountains. Every step was an adventure!",
+      "dateCreated": "2024-01-28",
+      "id_user": "7352",
+      "postLikeReactions": 12,
+      "postDislikeReactions": 2,
+      "postPictures": "https://source.unsplash.com/600x400/?mountains"
     },
     {
-      "id": "2",
-      "title": "Ferie",
-      "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
-      "dateCreated": "2023-12-31 00:00:00",
-      "id_user": 1,
-      "postComments": [],
-      "postLikeReactions": 1,
+      "id": "a11c",
+      "title": "Sunny Day at the Beach",
+      "body": "Enjoyed a sunny day at the beach, building sandcastles and relaxing by the waves.",
+      "dateCreated": "2024-01-27",
+      "id_user": "7352",
+      "postLikeReactions": 8,
       "postDislikeReactions": 1,
-      "postPictures": [],
-      "tags": [
-        1,
-        2
-      ]
+      "postPictures": "https://source.unsplash.com/600x400/?beach"
     },
     {
-      "id": "3",
-      "title": "Test",
-      "body": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
-      "dateCreated": "2023-12-33 00:00:00",
-      "id_user": 2,
-      "postComments": [],
-      "postLikeReactions": 3,
+      "id": "fb0c",
+      "title": "Memorable Vacation",
+      "body": "Vacationed by the sea, and it was a truly memorable experience. The sound of waves, the warm sun - perfection!",
+      "dateCreated": "2024-01-26",
+      "id_user": "8359",
+      "postLikeReactions": 15,
       "postDislikeReactions": 3,
-      "postPictures": [],
-      "tags": []
+      "postPictures": "https://source.unsplash.com/600x400/?sea"
     },
     {
-      "id": "4",
-      "title": "studia",
-      "body": "Projekty do oddania",
-      "dateCreated": "2024-01-20T17:42:32.572Z",
-      "id_user": 1,
-      "postComments": "",
-      "postLikeReactions": 0,
+      "id": "94c1",
+      "title": "New Beginnings",
+      "body": "Embracing new beginnings in 2024. Excited about the journey ahead!",
+      "dateCreated": "2024-01-25",
+      "id_user": "7352",
+      "postLikeReactions": 6,
       "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
+      "postPictures": "https://source.unsplash.com/600x400/?sea"
     },
     {
-      "id": "5",
-      "title": "aaa",
-      "body": "aaa",
-      "dateCreated": "2024-01-20T17:44:44.700Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 17,
-      "postDislikeReactions": 8,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "6",
-      "title": "asd1",
-      "body": "asd1",
-      "dateCreated": "2024-01-20T18:05:02.226Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "7",
-      "title": "asd1",
-      "body": "asd1",
-      "dateCreated": "2024-01-20T18:05:39.197Z",
-      "id_user": "1",
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "8",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:07:05.002Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "9",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:08:40.101Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": 0,
-      "tags": []
-    },
-    {
-      "id": "10",
-      "title": "aa",
-      "body": "aaa",
-      "dateCreated": "2024-01-20T18:10:31.000Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "tags": []
-    },
-    {
-      "id": "11",
-      "title": "a",
-      "body": "a",
-      "dateCreated": "2024-01-20T18:14:09.985Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "tags": []
-    },
-    {
-      "id": "12",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:15:43.529Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "tags": []
-    },
-    {
-      "id": "13",
-      "title": "aa",
-      "body": "aa",
-      "dateCreated": "2024-01-20T18:20:32.429Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "",
-      "tags": []
-    },
-    {
-      "id": "14",
-      "title": "aa",
-      "body": "aaa",
-      "dateCreated": "2024-01-20T18:22:55.734Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "15",
-      "title": "aaa",
-      "body": "aaaaa",
-      "dateCreated": "2024-01-20T18:29:17.299Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "16",
-      "title": "aaa",
-      "body": "aaaaa",
-      "dateCreated": "2024-01-20T18:29:37.439Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "17",
-      "title": "asdsa",
-      "body": "asdasd",
-      "dateCreated": "2024-01-20T18:30:08.296Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "4f81",
-      "title": "tytuł",
-      "body": "kontent",
-      "dateCreated": "2024-01-21T20:31:10.015Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "mobile-login-concept-illustration_114360-135.avif",
-      "tags": []
-    },
-    {
-      "id": "f9c9",
-      "title": "sesja",
-      "body": "sesja nauka",
-      "dateCreated": "2024-01-22T11:33:13.009Z",
-      "id_user": 2,
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "lysy_avatar.jpg",
-      "tags": []
-    },
-    {
-      "id": "db58",
-      "title": "aa",
-      "body": "aaaa",
-      "dateCreated": "2024-01-22T11:35:51.013Z",
-      "id_user": "21a8",
-      "postComments": "",
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
-      "postPictures": "lysy_avatar.jpg",
-      "tags": []
+      "id": "12a7",
+      "title": "Tech Talk",
+      "body": "Attended an insightful tech talk today. Cutting-edge technologies and innovation discussed!",
+      "dateCreated": "2024-01-24",
+      "id_user": "8359",
+      "postLikeReactions": 10,
+      "postDislikeReactions": 2,
+      "postPictures": "https://source.unsplash.com/600x400/?sea"
     }
   ],
   "posts_comments": [
     {
       "id": "1",
-      "content": "Comment on the sample post",
-      "date_created": "2022-01-07T10:00:00Z",
-      "id_post": 1,
-      "id_user": 1
-    },
-    {
-      "id": "b2ec",
-      "content": "Pierwszy komentarz Piotra",
-      "id_post": "1",
-      "id_user": "21"
-    },
-    {
-      "id": "5456",
-      "content": "Baby it's kinda crazy",
-      "id_post": "1",
-      "id_user": "21"
-    },
-    {
-      "id": "ec09",
-      "content": "xdd",
-      "id_post": "1",
-      "id_user": "21"
-    },
-    {
-      "id": "af65",
-      "content": "ALE FAZA",
-      "id_post": "4",
-      "id_user": "21"
-    }
-  ],
-  "posts_pictures": [
-    {
-      "id": "1",
-      "picture": null,
-      "id_post": 1
+      "content": "Amazing views! I need to visit there.",
+      "id_post": "dc36",
+      "id_user": "8359"
     },
     {
       "id": "2",
-      "picture": "avatar.jpg"
+      "content": "Looks like a perfect day!",
+      "id_post": "a11c",
+      "id_user": "8359"
     },
     {
       "id": "3",
-      "picture": "avatar.jpg"
+      "content": "Absolutely stunning!",
+      "id_post": "fb0c",
+      "id_user": "7352"
     },
     {
-      "id": "b587",
-      "picture": "mobile-login-concept-illustration_114360-135.avif"
+      "id": "4",
+      "content": "Wishing you a fantastic journey!",
+      "id_post": "94c1",
+      "id_user": "8359"
     },
     {
-      "id": "4afe",
-      "picture": "lysy_avatar.jpg"
-    },
-    {
-      "id": "1a44",
-      "picture": "lysy_avatar.jpg"
+      "id": "5",
+      "content": "Tech talks are always exciting!",
+      "id_post": "12a7",
+      "id_user": "7352"
     }
   ],
   "posts_reactions": [
     {
       "id": "1",
       "type": "Like",
-      "date_created": "2022-01-08T08:30:00Z",
-      "id_post": 1,
-      "id_user": 1
-    }
-  ],
-  "tags": [
-    {
-      "id": "1",
-      "name": "Food",
-      "posts": [
-        1,
-        2
-      ]
+      "id_post": "dc36",
+      "id_user": "8359"
     },
     {
       "id": "2",
-      "name": "Sport",
-      "posts": [
-        2
-      ]
+      "type": "Like",
+      "id_post": "a11c",
+      "id_user": "8359"
+    },
+    {
+      "id": "3",
+      "type": "Like",
+      "id_post": "fb0c",
+      "id_user": "7352"
+    },
+    {
+      "id": "4",
+      "type": "Like",
+      "id_post": "94c1",
+      "id_user": "8359"
+    },
+    {
+      "id": "5",
+      "type": "Like",
+      "id_post": "12a7",
+      "id_user": "7352"
     }
   ],
   "users_relations": [
     {
       "id": "1",
-      "user_id": 2,
+      "user_id": "7352",
       "status": "Friends",
-      "userRelationsFrom": 1,
-      "userRelationsTo": 2
+      "userRelationsFrom": "8359",
+      "userRelationsTo": "7352"
     },
     {
       "id": "2",
-      "user_id": 1,
+      "user_id": "8359",
       "status": "Friends",
-      "userRelationsFrom": 2,
-      "userRelationsTo": 1
-    },
-    {
-      "id": "3",
-      "user_id": 3,
-      "status": "Request",
-      "userRelationsFrom": 1,
-      "userRelationsTo": 3
-    },
-    {
-      "id": "6",
-      "user_id": "3",
-      "status": "Request",
-      "userRelationsFrom": 3,
-      "userRelationsTo": 21
-    },
-    {
-      "id": "7",
-      "user_id": 21,
-      "status": "Friends",
-      "userRelationsFrom": 21,
-      "userRelationsTo": 3
+      "userRelationsFrom": "7352",
+      "userRelationsTo": "8359"
     }
   ]
 }

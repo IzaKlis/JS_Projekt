@@ -15,23 +15,28 @@ const EditProfile = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const [userId, setUserId] = useState('');
     const [currentPassword, setCurrentPassword] = useState('');
+    const userId = sessionStorage.getItem('userId');
 
     const fetchData = async () => {
         try {
             const response = await API.get("/users/" + userId);
             setUserData(response.data);
-            console.log(response.data);
         } catch (error) {
             console.error('Error while fetching data', error);
         }
+        const usersTmp = await API.get("/users");
+        const idRelation = usersTmp.data.userRelationTo || [];
+
+        const relationsTmp = await API.get("/users_relations");
+        const currentUserRelations = relationsTmp.data.filter(relation => idRelation.includes(relation.status === "Friends"));
+
+        console.log(currentUserRelations);
     };
 
     useEffect(() => {
-        setUserId(sessionStorage.getItem('userId'));
         fetchData();
-    }, [fetchData]);
+    }, []);
 
     const setUserData = (data) => {
         setEmail(data.email);
@@ -46,7 +51,7 @@ const EditProfile = () => {
 
     const handleSave = async () => {
         try {
-            const picturePath = selectedImage ? `images/${firstName.toLowerCase()}_${lastName.toLowerCase()}.png` : null;
+            const picturePath = selectedImage ? selectedImage : null;
 
             const requestBody = {
                 email: email,
@@ -153,15 +158,10 @@ const EditProfile = () => {
                 />
             </form>
             <label>Profile picture:</label>
-            <label htmlFor="upload-image" className="upload-image-label">
-                {selectedImage ? (
-                    <img src={URL.createObjectURL(selectedImage)} alt="Zdjęcie profilowe"/>
-                ) : (
-                    <div className="upload-image-container">
-                        Kliknij, aby wybrać zdjęcie
-                    </div>
-                )}
-            </label>
+                {/*<img src={URL.createObjectURL(selectedImage)} alt="Zdjęcie profilowe" />*/}
+                <div className="upload-image-container">
+                    Kliknij, aby wybrać zdjęcie
+                </div>
             <input
                 type="file"
                 accept="image/*"

@@ -29,14 +29,13 @@ const Login = () => {
                     if (passwordMatch) {
                         sessionStorage.setItem('userId', user.id);
                         navigate('/');
-                        console.log("przeszło");
                     } else {
-                        console.log("Nieudane logowanie");
+                        setLoginError("User does not exist");
                     }
                 }
             }
         } catch (error) {
-            console.error("Błąd podczas pobierania użytkowników:", error);
+            console.error("Error while fetchung users", error);
         }
     };
 
@@ -62,17 +61,14 @@ const Login = () => {
             about: " ",
             birthdayDate: birthDate,
             gender: gender,
-            picture: " "
+            picture: " ",
+            posts: []
         }
         try {
             const response = await API.post('/users', requestBody);
             setIsLoggingIn(true);
-            console.log('Rejestracja pomyślna!');
-            console.log(response.data.id + "idddddddd");
-
         } catch (error) {
-            console.error('Błąd rejestracji:', error);
-            setRegistrationError('Błąd rejestracji. Spróbuj ponownie.');
+            setRegistrationError('Registration error. Please try again.');
         }
     };
 
