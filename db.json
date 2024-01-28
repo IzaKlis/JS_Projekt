@@ -88,6 +88,47 @@
       "content": "Amazing views! I need to visit there.",
       "id_post": "dc36",
       "id_user": "8359"
+      "content": "Comment on the sample post",
+      "date_created": "2022-01-07T10:00:00Z",
+      "id_post": 1,
+      "id_user": 1
+    },
+    {
+      "id": "b2ec",
+      "content": "Pierwszy komentarz Piotra",
+      "id_post": "1",
+      "id_user": "21"
+    },
+    {
+      "id": "5456",
+      "content": "Baby it's kinda crazy",
+      "id_post": "1",
+      "id_user": "21"
+    },
+    {
+      "id": "ec09",
+      "content": "xdd",
+      "id_post": "1",
+      "id_user": "21"
+    },
+    {
+      "id": "af65",
+      "content": "ALE FAZA",
+      "id_post": "4",
+      "id_user": "21"
+    },
+    {
+      "id": "9261",
+      "content": "aaa",
+      "id_post": "1",
+      "id_user": "21"
+    }
+  ],
+  "posts_pictures": [
+    {
+      "id": "1",
+      "picture": null,
+      "id_post": 1
     },
     {
       "id": "2",
@@ -160,6 +201,22 @@
       "status": "Friends",
       "userRelationsFrom": "7352",
       "userRelationsTo": "8359"
+      "userRelationsFrom": 2,
+      "userRelationsTo": 1
+    },
+    {
+      "id": "3",
+      "user_id": 3,
+      "status": "Request",
+      "userRelationsFrom": 1,
+      "userRelationsTo": 3
+    },
+    {
+      "id": "174e",
+      "user_id": 1,
+      "status": "Friends",
+      "userRelationsFrom": 21,
+      "userRelationsTo": 1
     }
   ]
 }
