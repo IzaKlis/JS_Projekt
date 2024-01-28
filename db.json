@@ -87,11 +87,9 @@
       "id": "1",
       "content": "Amazing views! I need to visit there.",
       "id_post": "dc36",
-      "id_user": "8359"
+      "id_user": "8359",
       "content": "Comment on the sample post",
       "date_created": "2022-01-07T10:00:00Z",
-      "id_post": 1,
-      "id_user": 1
     },
     {
       "id": "b2ec",
@@ -190,19 +188,17 @@
   "users_relations": [
     {
       "id": "1",
-      "user_id": "7352",
+      "user_id": 7352,
       "status": "Friends",
-      "userRelationsFrom": "8359",
-      "userRelationsTo": "7352"
+      "userRelationsFrom": 8359,
+      "userRelationsTo": 7352
     },
     {
       "id": "2",
-      "user_id": "8359",
+      "user_id": 8359,
       "status": "Friends",
-      "userRelationsFrom": "7352",
-      "userRelationsTo": "8359"
-      "userRelationsFrom": 2,
-      "userRelationsTo": 1
+      "userRelationsFrom": 7352,
+      "userRelationsTo": 8359
     },
     {
       "id": "3",
