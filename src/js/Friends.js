@@ -9,6 +9,7 @@ const Friends = () => {
     const [addFriends, setAddFriends] = useState([]);
     const [requests, setRequests] = useState([]);
     const [relations, setRelations] = useState([]);
+    const [requestsFromUser, setRequestsFromUser] = useState([]);
     let actualUserId = parseInt(sessionStorage.getItem('userId'));
 
     const handleFilterChange = (e) => {
@@ -28,12 +29,27 @@ const Friends = () => {
     const handleRemoveFriend = async (id) => {
         try {
             console.log(id)
-            const response = await API.delete('/users_relations?id=' + id);
+            const response = await API.delete('/users_relations/' + id);
             console.log('Zaktualizowano obiekt request:', response.data);
         } catch (error) {
             console.error('Błąd podczas aktualizacji obiektu request:', error);
         }
     };
+
+    const handleSendRequest = async (id) => {
+        try {
+            const requestBody = {
+                user_id: parseInt(id),
+                status: "Request",
+                userRelationsFrom: actualUserId,
+                userRelationsTo: parseInt(id),
+            }
+            const response = await API.post('/users_relations', requestBody)
+            console.log(response.data)
+        } catch (error) {
+            console.error('Błąd podczas aktualizacji obiektu request:', error);
+        }
+    }
 
     const handleSearchChange = (e) => {
         setSearch(e.target.value);
@@ -58,15 +74,28 @@ const Friends = () => {
             const userFRelations = relations.filter(item => parseInt(item.user_id) === actualUserId && item.status === "Friends");
             const fullFUserRelations = userFRelations.map(item => ({
                 ...item,
-                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom)
+                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom),
+                userRelationsTo: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsTo)
+                
             }));
             setFriends(fullFUserRelations);
 
             const usersWithoutRelations = users.filter(user => {
-                const isFriend = friends.some(friend => friend.userRelationsFrom.id === user.id);
-                const isRequestSent = requests.some(request => request.userRelationsFrom.id === user.id);
-                return !isFriend && !isRequestSent && user.id !== actualUserId;
+                console.log(requests)
+                const isFriend = friends.some(friend => parseInt(friend.userRelationsFrom.id) === parseInt(user.id)); //sprawdza czy nie sa juz znajomymi
+                const isRequestSent = requests.some(request => parseInt(request.userRelationsFrom.id) === parseInt(user.id)); //sprawdza czy zalogowany user nie ma zaproszenia juz od tego typa
+                console.log("relacje userow", relations);
+
+                const isRequestReceived = relations.some(
+                    relation => parseInt(relation.userRelationsFrom) === parseInt(actualUserId) && parseInt(relation.userRelationsTo) === parseInt(user.id)
+                );
+             //sprawdza czy dany user juz ma zaproszenie od zalogowanego usera
+                console.log("is request received", isRequestReceived);
+                return !isFriend && !isRequestSent && !isRequestReceived && user.id != actualUserId;
             });
+
+            console.log("userzy bez relacji", usersWithoutRelations);
+
             setAddFriends(usersWithoutRelations);
 
         } catch (error) {
@@ -80,7 +109,7 @@ const Friends = () => {
     useEffect(() => {
         fetchData();
         console.log("fetchdata")
-    },[users]);
+    },[relations.length, addFriends.length]);
 
 
     return (
@@ -140,7 +169,8 @@ const Friends = () => {
                             <li key={user.id}>
                                 {`${user.name} ${user.surname}`}
                                 <button
-                                    type="button">
+                                    type="button"
+                                    onClick={() => handleSendRequest(user.id)}>
                                     Add Friend
                                 </button>
                             </li>

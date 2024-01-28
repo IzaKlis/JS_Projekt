@@ -405,11 +405,11 @@
       "userRelationsTo": 3
     },
     {
-      "id": "cb1f",
-      "user_id": 21,
+      "id": "174e",
+      "user_id": 1,
       "status": "Friends",
-      "userRelationsFrom": 2,
-      "userRelationsTo": 21
+      "userRelationsFrom": 21,
+      "userRelationsTo": 1
     }
   ]
 }
