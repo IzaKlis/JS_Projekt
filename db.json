@@ -28,6 +28,18 @@
       "posts": [
         "fb0c"
       ]
+    },
+    {
+      "id": "4653",
+      "name": "mateo",
+      "surname": "mateonazwisko",
+      "email": "mateusz@gmail.com",
+      "password": "$2a$10$q9C2LbuzChppOom2I4gmruRuwjFOedrPeSvjEOvVACleWx29RMR5C",
+      "about": " ",
+      "birthdayDate": "2017-01-28",
+      "gender": "male",
+      "picture": " ",
+      "posts": []
     }
   ],
   "posts": [
@@ -37,7 +49,7 @@
       "body": "Spent the weekend exploring the breathtaking mountains. Every step was an adventure!",
       "dateCreated": "2024-01-28",
       "id_user": "7352",
-      "postLikeReactions": 12,
+      "postLikeReactions": 15,
       "postDislikeReactions": 2,
       "postPictures": "https://source.unsplash.com/600x400/?mountains"
     },
@@ -88,8 +100,7 @@
       "content": "Amazing views! I need to visit there.",
       "id_post": "dc36",
       "id_user": "8359",
-      "content": "Comment on the sample post",
-      "date_created": "2022-01-07T10:00:00Z",
+      "date_created": "2022-01-07T10:00:00Z"
     },
     {
       "id": "b2ec",
@@ -120,6 +131,12 @@
       "content": "aaa",
       "id_post": "1",
       "id_user": "21"
+    },
+    {
+      "id": "af5f",
+      "content": "Wow, super!",
+      "id_post": "dc36",
+      "id_user": "4653"
     }
   ],
   "posts_pictures": [
@@ -155,34 +172,76 @@
   ],
   "posts_reactions": [
     {
-      "id": "1",
-      "type": "Like",
+      "id": "aa3c",
+      "type": "like",
       "id_post": "dc36",
-      "id_user": "8359"
+      "id_user": "4653"
     },
     {
-      "id": "2",
-      "type": "Like",
+      "id": "f07c",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "e336",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "6d05",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "a6bc",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "91a2",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "889b",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "b0cc",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "5214",
+      "type": "like",
       "id_post": "a11c",
-      "id_user": "8359"
+      "id_user": "4653"
     },
     {
-      "id": "3",
-      "type": "Like",
-      "id_post": "fb0c",
-      "id_user": "7352"
+      "id": "b4ca",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
     },
     {
-      "id": "4",
-      "type": "Like",
-      "id_post": "94c1",
-      "id_user": "8359"
+      "id": "f161",
+      "type": "like",
+      "id_post": "a11c",
+      "id_user": "4653"
     },
     {
-      "id": "5",
-      "type": "Like",
-      "id_post": "12a7",
-      "id_user": "7352"
+      "id": "3f89",
+      "type": "like",
+      "id_post": "a11c",
+      "id_user": "4653"
     }
   ],
   "users_relations": [
@@ -199,20 +258,6 @@
       "status": "Friends",
       "userRelationsFrom": 7352,
       "userRelationsTo": 8359
-    },
-    {
-      "id": "3",
-      "user_id": 3,
-      "status": "Request",
-      "userRelationsFrom": 1,
-      "userRelationsTo": 3
-    },
-    {
-      "id": "174e",
-      "user_id": 1,
-      "status": "Friends",
-      "userRelationsFrom": 21,
-      "userRelationsTo": 1
     }
   ]
 }

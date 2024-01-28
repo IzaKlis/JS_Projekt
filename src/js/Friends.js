@@ -23,6 +23,7 @@ const Friends = () => {
         } catch (error) {
             console.error('Błąd podczas aktualizacji obiektu request:', error);
         }
+        fetchData();
     };
 
 
@@ -34,6 +35,7 @@ const Friends = () => {
         } catch (error) {
             console.error('Błąd podczas aktualizacji obiektu request:', error);
         }
+        fetchData();
     };
 
     const handleSendRequest = async (id) => {
@@ -49,6 +51,7 @@ const Friends = () => {
         } catch (error) {
             console.error('Błąd podczas aktualizacji obiektu request:', error);
         }
+        fetchData();
     }
 
     const handleSearchChange = (e) => {

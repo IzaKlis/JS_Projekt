@@ -8,6 +8,7 @@ const Home = () => {
     const [search, setSearch] = useState('');
     const [commentContent, setCommentContent] = useState('');
     const [comments, setComments] = useState([]);
+    const [reactions, setReactions] = useState([]);
     const userId = sessionStorage.getItem('userId');
 
     const handleSearchChange = (e) => {
@@ -24,6 +25,11 @@ const Home = () => {
 
             const commentstmp = await API.get("/posts_comments");
             setComments(commentstmp.data);
+
+            const reactionstmp = await API.get("/posts_reactions");
+            setReactions(reactionstmp.data);
+            console.log("Lista reakcji: ", reactionstmp.data)
+
         } catch (error) {
             console.error('Error while fetching data', error);
         }
@@ -40,24 +46,20 @@ const Home = () => {
 
     const handleReaction = async (postId, type) => {
         try {
-            const response = await API.get(`/posts/${postId}`);
-            const currentPost = response.data;
+            const response = await API.post("/posts_reactions", {
+                type: type,
+                id_post: postId,
+                id_user: userId
+            });
+            fetchData();
+            console.log('Reaction response:', response.data);
+            console.log("LICZBA REAKCJI ", reactions.filter(reaction => reaction.type === "like" && reaction.id_post == postId))
 
-            if (type == "like") {
-                currentPost.postLikeReactions++;
-            } else {
-                currentPost.postDislikeReactions++;
-            }
-
-            const updateResponse = await API.put(`/posts/${postId}`, currentPost);
-            const r = await API.get("/posts");
-            setPosts(r.data);
-
-            console.log('Reaction response:', updateResponse.data);
         } catch (error) {
             console.error('Error while reacting to post', error);
         }
     };
+    
 
     const handleComment = async (postId, commentContent) => {
         try {
@@ -105,11 +107,10 @@ const Home = () => {
                 <div className="home-post-buttons">
                     <div>
                         <button onClick={() => handleReaction(post.id, "like")} className="home-like-button">
-                            Like ({post.postLikeReactions})
+                            Like ({reactions.filter(reaction => reaction.type === "Like").length})
                         </button>
-                        <button onClick={() => handleReaction(post.id, "dislike")}
-                                className="home-dislike-button">
-                            Dislike ({post.postDislikeReactions})
+                        <button onClick={() => handleReaction(post.id, "dislike")} className="home-dislike-button">
+                            Dislike ({reactions.filter(reaction => reaction.type === "Dislike").length})
                         </button>
                         <div className="home-comment">
                             {comments
