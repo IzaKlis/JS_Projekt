@@ -67,15 +67,22 @@ const Home = () => {
             console.error('Error while reacting to post', error);
         }
     };
-    
+
 
     const handleComment = async (postId, commentContent) => {
         try {
-           const response = await API.post("/posts_comments", {
+            // Check if the comment content is not empty or contains only whitespace
+            if (commentContent.trim() === '') {
+                console.log('Comment content cannot be empty');
+                return;
+            }
+
+            const response = await API.post("/posts_comments", {
                 content: commentContent,
                 id_post: postId,
                 id_user: userId
             });
+
             setCommentContent('');
             fetchData();
         } catch (error) {
@@ -125,11 +132,17 @@ const Home = () => {
                                 .filter(comment => comment.id_post === post.id)
                                 .map((comment, commentIndex) => (
                                     <div key={commentIndex}>
-                                        <p>{comment.content}</p>
-                                        <p>{findUserName(comment.id_user)}</p>
+                                        <Link to={`/profile/${comment.id_user}`} className="home-comment-user">
+                                            {findUserName(comment.id_user)}
+                                        </Link>
+                                        <div className="home-comment-content">
+                                            <p>{comment.content}</p>
+                                        </div>
                                     </div>
                                 ))}
                         </div>
+
+
                         <form className="home-comment-form" onSubmit={(e) => {
                             e.preventDefault();
                             handleComment(post.id, commentContent);

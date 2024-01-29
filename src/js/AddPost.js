@@ -21,6 +21,13 @@ function AddPost() {
         }));
     };
 
+    function getRandomTravelWord() {
+        const travelWords = ['sea','mountains','river','lake','jungle','desert','village','forest','North_Pole'];
+
+        const randomIndex = Math.floor(Math.random() * travelWords.length);
+        return travelWords[randomIndex];
+    }
+
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         let userId = sessionStorage.getItem('userId');
@@ -34,7 +41,7 @@ function AddPost() {
                 postComments: [],
                 postLikeReactions: 0,
                 postDislikeReactions: 0,
-                postPictures: fileName,
+                postPictures: 'https://source.unsplash.com/800x200/?'+getRandomTravelWord(),
             });
             const postId = response.data.id;
             const userResponse = await API.get(`/users/${userId}`);
@@ -47,23 +54,7 @@ function AddPost() {
             console.error('Error while creating a new post', error);
         }
         navigate("/")
-    };
 
-    const handleImageUpload = (e) => {
-        const file = e.target.files[0];
-        setFileName(file.name)
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                const imageDataURL = reader.result;
-                setPost((prevPost) => ({
-                    ...prevPost,
-                    image: imageDataURL,
-                }));
-            };
-            reader.readAsDataURL(file);
-            
-        }
     };
 
 
@@ -89,17 +80,6 @@ function AddPost() {
                             onChange={handleInputChange}
                             required
                         />
-                        <input
-                            type="file"
-                            name="image"
-                            id="imageUpload"
-                            accept="image/*"
-                            onChange={(e) => handleImageUpload(e)}
-                            style={{display: 'none'}}
-                        />
-                        <label htmlFor="imageUpload">
-                            Add Picture
-                        </label>
                         {post.image && <img src={post.image} alt="Profile Picture"/>}
                         <button type="submit"> Add Post</button>
                     </form>

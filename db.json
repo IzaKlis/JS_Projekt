@@ -9,7 +9,7 @@
       "about": "Travel enthusiast, nature lover",
       "birthdayDate": "1990-05-15",
       "gender": "female",
-      "picture": "https://randomuser.me/api/portraits/women/1.jpg",
+      "picture": "https://source.unsplash.com/400x400/?female",
       "posts": [
         "dc36",
         "a11c"
@@ -24,7 +24,7 @@
       "about": "Adventurous soul, tech geek",
       "birthdayDate": "1985-10-20",
       "gender": "male",
-      "picture": "https://randomuser.me/api/portraits/men/2.jpg",
+      "picture": "https://source.unsplash.com/400x400/?male",
       "posts": [
         "fb0c"
       ]
@@ -38,9 +38,34 @@
       "about": " ",
       "birthdayDate": "2017-01-28",
       "gender": "male",
-      "picture": " ",
+      "picture": "https://source.unsplash.com/400x400/?male",
+      "posts": []
+    },
+    {
+      "id": "7ecd",
+      "name": "Dawid",
+      "surname": "Kobeszko",
+      "email": "dawid.kob02@gmail.com",
+      "password": "$2a$10$P9mFRDtiCgsgS3pE04hSROhiLXf8O40/J.Pii0aSLvbSkTIye5ubm",
+      "about": "Lorem ipsum dolor sit amet",
+      "birthdayDate": "2002-04-28",
+      "gender": "male",
+      "picture": "https://source.unsplash.com/400x400/?male",
+      "posts": []
+    },
+    {
+      "id": "c31e",
+      "name": "dawid",
+      "surname": "kobeszko",
+      "email": "dawid.kob02@gmail.com",
+      "password": "$2a$10$vHja3EE4y.b.a9P1//3fAuPmAxq.nFsOG9lmYi93FL9W5LP810gom",
+      "about": "",
+      "birthdayDate": "2002-04-28",
+      "gender": "male",
+      "picture": "https://source.unsplash.com/400x400/?male",
       "posts": [
-        "f3c0"
+        "803b",
+        "ce78"
       ]
     }
   ],
@@ -53,7 +78,7 @@
       "id_user": "7352",
       "postLikeReactions": 15,
       "postDislikeReactions": 2,
-      "postPictures": "https://source.unsplash.com/600x400/?mountains"
+      "postPictures": "https://source.unsplash.com/800x200/?mountains"
     },
     {
       "id": "a11c",
@@ -63,7 +88,7 @@
       "id_user": "7352",
       "postLikeReactions": 8,
       "postDislikeReactions": 1,
-      "postPictures": "https://source.unsplash.com/600x400/?beach"
+      "postPictures": "https://source.unsplash.com/800x200/?beach"
     },
     {
       "id": "fb0c",
@@ -73,7 +98,7 @@
       "id_user": "8359",
       "postLikeReactions": 15,
       "postDislikeReactions": 3,
-      "postPictures": "https://source.unsplash.com/600x400/?sea"
+      "postPictures": "https://source.unsplash.com/800x200/?sea"
     },
     {
       "id": "94c1",
@@ -83,7 +108,7 @@
       "id_user": "7352",
       "postLikeReactions": 6,
       "postDislikeReactions": 0,
-      "postPictures": "https://source.unsplash.com/600x400/?sea"
+      "postPictures": "https://source.unsplash.com/800x200/?sea"
     },
     {
       "id": "12a7",
@@ -93,18 +118,29 @@
       "id_user": "8359",
       "postLikeReactions": 10,
       "postDislikeReactions": 2,
-      "postPictures": "https://source.unsplash.com/600x400/?sea"
+      "postPictures": "https://source.unsplash.com/800x200/?sea"
     },
     {
-      "id": "f3c0",
-      "title": "Sesja",
-      "body": "Przed sesja trzeba zaliczyc javascripta ",
-      "dateCreated": "28.01.2024",
-      "id_user": "4653",
+      "id": "803b",
+      "title": "asdasd",
+      "body": "asdas",
+      "dateCreated": "29.01.2024",
+      "id_user": "c31e",
       "postComments": [],
       "postLikeReactions": 0,
       "postDislikeReactions": 0,
-      "postPictures": []
+      "postPictures": "https://source.unsplash.com/800x200/?river"
+    },
+    {
+      "id": "ce78",
+      "title": "asdasd",
+      "body": "xzc",
+      "dateCreated": "29.01.2024",
+      "id_user": "c31e",
+      "postComments": [],
+      "postLikeReactions": 0,
+      "postDislikeReactions": 0,
+      "postPictures": "https://source.unsplash.com/800x200/?village"
     }
   ],
   "posts_comments": [
@@ -152,10 +188,10 @@
       "id_user": "4653"
     },
     {
-      "id": "c64f",
-      "content": "oby sie udalo",
-      "id_post": "f3c0",
-      "id_user": "4653"
+      "id": "38fa",
+      "content": "asasdasd",
+      "id_post": "dc36",
+      "id_user": "c31e"
     }
   ],
   "posts_pictures": [
@@ -191,34 +227,82 @@
   ],
   "posts_reactions": [
     {
-      "id": "a688",
+      "id": "aa3c",
       "type": "like",
       "id_post": "dc36",
       "id_user": "4653"
     },
     {
-      "id": "cde8",
-      "type": "dislike",
+      "id": "f07c",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "e336",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "6d05",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "a6bc",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "91a2",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "889b",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "b0cc",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "5214",
+      "type": "like",
       "id_post": "a11c",
       "id_user": "4653"
     },
     {
-      "id": "e7f6",
+      "id": "b4ca",
       "type": "like",
-      "id_post": "fb0c",
+      "id_post": "dc36",
       "id_user": "4653"
     },
     {
-      "id": "e048",
-      "type": "dislike",
-      "id_post": "94c1",
+      "id": "f161",
+      "type": "like",
+      "id_post": "a11c",
       "id_user": "4653"
     },
     {
-      "id": "fad0",
+      "id": "3f89",
       "type": "like",
-      "id_post": "12a7",
+      "id_post": "a11c",
       "id_user": "4653"
+    },
+    {
+      "id": "6a01",
+      "type": "like",
+      "id_post": "a11c",
+      "id_user": "7ecd"
     }
   ],
   "users_relations": [
@@ -235,6 +319,27 @@
       "status": "Friends",
       "userRelationsFrom": 7352,
       "userRelationsTo": 8359
+    },
+    {
+      "id": "52d1",
+      "user_id": 7352,
+      "status": "Request",
+      "userRelationsFrom": 7,
+      "userRelationsTo": 7352
+    },
+    {
+      "id": "5525",
+      "user_id": 8359,
+      "status": "Request",
+      "userRelationsFrom": 7,
+      "userRelationsTo": 8359
+    },
+    {
+      "id": "f035",
+      "user_id": 4653,
+      "status": "Request",
+      "userRelationsFrom": 7,
+      "userRelationsTo": 4653
     }
   ]
 }

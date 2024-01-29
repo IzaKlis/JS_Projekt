@@ -99,11 +99,6 @@ const EditProfile = () => {
         }
     };
 
-    const handleImageChange = (e) => {
-        const file = e.target.files[0];
-        setSelectedImage(file);
-    };
-
     const startEditing = () => {
         setIsEditing(true);
     };
@@ -157,18 +152,6 @@ const EditProfile = () => {
                     disabled={!isEditing}
                 />
             </form>
-            <label>Profile picture:</label>
-                {/*<img src={URL.createObjectURL(selectedImage)} alt="Zdjęcie profilowe" />*/}
-                <div className="upload-image-container">
-                    Kliknij, aby wybrać zdjęcie
-                </div>
-            <input
-                type="file"
-                accept="image/*"
-                id="upload-image"
-                onChange={handleImageChange}
-                disabled={!isEditing}
-            />
             <form>
                 <label>Password:</label>
                 <input

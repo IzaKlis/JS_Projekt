@@ -53,6 +53,16 @@ const Login = () => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        let picture;
+        if (gender === "male") {
+            picture = "https://source.unsplash.com/400x400/?male";
+        } else if (gender === "female") {
+            picture = "https://source.unsplash.com/400x400/?female";
+        } else {
+            setRegistrationError("Invalid gender selected");
+            return;
+        }
+
         const requestBody = {
             name: name,
             surname: surname,
@@ -61,7 +71,7 @@ const Login = () => {
             about: " ",
             birthdayDate: birthDate,
             gender: gender,
-            picture: " ",
+            picture: picture,
             posts: []
         }
         try {
