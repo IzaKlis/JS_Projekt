@@ -129,7 +129,7 @@
       "title": "asdasd",
       "body": "asdas",
       "dateCreated": "29.01.2024",
-      "id_user": "c31e",
+      "id_user": "3213",
       "postComments": [],
       "postPictures": "https://source.unsplash.com/800x200/?river"
     },
@@ -138,7 +138,7 @@
       "title": "asdasd",
       "body": "xzc",
       "dateCreated": "29.01.2024",
-      "id_user": "c31e",
+      "id_user": "3213",
       "postComments": [],
       "postPictures": "https://source.unsplash.com/800x200/?village"
     },
@@ -300,24 +300,24 @@
       "userRelationsTo": 8359
     },
     {
-      "id": "52d1",
+      "id": "5245",
       "user_id": 7352,
       "status": "Request",
-      "userRelationsFrom": 7,
+      "userRelationsFrom": 3213,
       "userRelationsTo": 7352
     },
     {
       "id": "5525",
       "user_id": 8359,
       "status": "Request",
-      "userRelationsFrom": 7,
+      "userRelationsFrom": 3213,
       "userRelationsTo": 8359
     },
     {
-      "id": "f035",
+      "id": "15251",
       "user_id": 4653,
       "status": "Request",
-      "userRelationsFrom": 7,
+      "userRelationsFrom": 3212,
       "userRelationsTo": 4653
     }
   ]

@@ -75,18 +75,20 @@ const Friends = () => {
             const userRRelations = relations.filter(item => parseInt(item.user_id) === actualUserId && item.status === "Request");
             const fullRUserRelations = userRRelations.map(item => ({
                 ...item,
-                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom)
+                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom),
+                userRelationsTo: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsTo)
             }));
             setRequests(fullRUserRelations);
 
             const userFRelations = relations.filter(item => parseInt(item.user_id) === actualUserId && item.status === "Friends");
             const fullFUserRelations = userFRelations.map(item => ({
                 ...item,
-                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom),
-                userRelationsTo: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsTo)
+                userRelationsFrom: users.find(itemUser => parseInt(itemUser.id) === item.userRelationsFrom)
+                
                 
             }));
             setFriends(fullFUserRelations);
+            console.log("PRZyjaciele", fullFUserRelations)
 
             const usersWithoutRelations = users.filter(user => {
                 console.log(requests)
