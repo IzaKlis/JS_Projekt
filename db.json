@@ -35,14 +35,16 @@
       "surname": "mateonazwisko",
       "email": "mateusz@gmail.com",
       "password": "$2a$10$q9C2LbuzChppOom2I4gmruRuwjFOedrPeSvjEOvVACleWx29RMR5C",
-      "about": " ",
+      "about": "student politechniki bialostockiej wydzial informatyka",
       "birthdayDate": "2017-01-28",
       "gender": "male",
       "picture": "https://source.unsplash.com/400x400/?male",
-      "posts": []
+      "posts": [
+        "f5d1"
+      ]
     },
     {
-      "id": "7ecd",
+      "id": "7322",
       "name": "Dawid",
       "surname": "Kobeszko",
       "email": "dawid.kob02@gmail.com",
@@ -54,7 +56,7 @@
       "posts": []
     },
     {
-      "id": "c31e",
+      "id": "3213",
       "name": "dawid",
       "surname": "kobeszko",
       "email": "dawid.kob02@gmail.com",
@@ -67,6 +69,18 @@
         "803b",
         "ce78"
       ]
+    },
+    {
+      "id": "3212",
+      "name": "adam",
+      "surname": "kowalski",
+      "email": "mateusz@gmail.com",
+      "password": "$2a$10$5Knz8bp7ySc.T80rdHqWIub3qDz/GRYUEehfQGBxJj9rDvIt4350K",
+      "about": " ",
+      "birthdayDate": "2024-01-03",
+      "gender": "male",
+      "picture": "https://source.unsplash.com/400x400/?male",
+      "posts": []
     }
   ],
   "posts": [
@@ -76,8 +90,6 @@
       "body": "Spent the weekend exploring the breathtaking mountains. Every step was an adventure!",
       "dateCreated": "2024-01-28",
       "id_user": "7352",
-      "postLikeReactions": 15,
-      "postDislikeReactions": 2,
       "postPictures": "https://source.unsplash.com/800x200/?mountains"
     },
     {
@@ -86,8 +98,6 @@
       "body": "Enjoyed a sunny day at the beach, building sandcastles and relaxing by the waves.",
       "dateCreated": "2024-01-27",
       "id_user": "7352",
-      "postLikeReactions": 8,
-      "postDislikeReactions": 1,
       "postPictures": "https://source.unsplash.com/800x200/?beach"
     },
     {
@@ -96,8 +106,6 @@
       "body": "Vacationed by the sea, and it was a truly memorable experience. The sound of waves, the warm sun - perfection!",
       "dateCreated": "2024-01-26",
       "id_user": "8359",
-      "postLikeReactions": 15,
-      "postDislikeReactions": 3,
       "postPictures": "https://source.unsplash.com/800x200/?sea"
     },
     {
@@ -106,8 +114,6 @@
       "body": "Embracing new beginnings in 2024. Excited about the journey ahead!",
       "dateCreated": "2024-01-25",
       "id_user": "7352",
-      "postLikeReactions": 6,
-      "postDislikeReactions": 0,
       "postPictures": "https://source.unsplash.com/800x200/?sea"
     },
     {
@@ -116,8 +122,6 @@
       "body": "Attended an insightful tech talk today. Cutting-edge technologies and innovation discussed!",
       "dateCreated": "2024-01-24",
       "id_user": "8359",
-      "postLikeReactions": 10,
-      "postDislikeReactions": 2,
       "postPictures": "https://source.unsplash.com/800x200/?sea"
     },
     {
@@ -127,8 +131,6 @@
       "dateCreated": "29.01.2024",
       "id_user": "c31e",
       "postComments": [],
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
       "postPictures": "https://source.unsplash.com/800x200/?river"
     },
     {
@@ -138,8 +140,15 @@
       "dateCreated": "29.01.2024",
       "id_user": "c31e",
       "postComments": [],
-      "postLikeReactions": 0,
-      "postDislikeReactions": 0,
+      "postPictures": "https://source.unsplash.com/800x200/?village"
+    },
+    {
+      "id": "f5d1",
+      "title": "Sesja",
+      "body": "Robię projekty, a co u was?",
+      "dateCreated": "29.01.2024",
+      "id_user": "4653",
+      "postComments": [],
       "postPictures": "https://source.unsplash.com/800x200/?village"
     }
   ],
@@ -188,10 +197,16 @@
       "id_user": "4653"
     },
     {
-      "id": "38fa",
-      "content": "asasdasd",
-      "id_post": "dc36",
-      "id_user": "c31e"
+      "id": "2748",
+      "content": "piekne widoki",
+      "id_post": "a11c",
+      "id_user": "4653"
+    },
+    {
+      "id": "4771",
+      "content": "wow wspaniale!\n",
+      "id_post": "fb0c",
+      "id_user": "3212"
     }
   ],
   "posts_pictures": [
@@ -227,82 +242,46 @@
   ],
   "posts_reactions": [
     {
-      "id": "aa3c",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "f07c",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "e336",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "6d05",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "a6bc",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "91a2",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "889b",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "b0cc",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "5214",
-      "type": "like",
-      "id_post": "a11c",
-      "id_user": "4653"
-    },
-    {
-      "id": "b4ca",
-      "type": "like",
-      "id_post": "dc36",
-      "id_user": "4653"
-    },
-    {
-      "id": "f161",
-      "type": "like",
-      "id_post": "a11c",
-      "id_user": "4653"
-    },
-    {
-      "id": "3f89",
-      "type": "like",
-      "id_post": "a11c",
-      "id_user": "4653"
-    },
-    {
       "id": "6a01",
       "type": "like",
       "id_post": "a11c",
       "id_user": "7ecd"
+    },
+    {
+      "id": "d9de",
+      "type": "like",
+      "id_post": "a11c",
+      "id_user": "4653"
+    },
+    {
+      "id": "ff54",
+      "type": "dislike",
+      "id_post": "fb0c",
+      "id_user": "4653"
+    },
+    {
+      "id": "6212",
+      "type": "like",
+      "id_post": "94c1",
+      "id_user": "4653"
+    },
+    {
+      "id": "e2b0",
+      "type": "dislike",
+      "id_post": "12a7",
+      "id_user": "4653"
+    },
+    {
+      "id": "245c",
+      "type": "like",
+      "id_post": "dc36",
+      "id_user": "4653"
+    },
+    {
+      "id": "52a5",
+      "type": "like",
+      "id_post": "12a7",
+      "id_user": "3212"
     }
   ],
   "users_relations": [

@@ -84,7 +84,12 @@ const Login = () => {
 
     return (
         <div className="login-container">
-            <h1>App Name/Logo</h1>
+            <img
+                src="./images/app_logo.png"
+                alt="Logo aplikacji"
+                width={100}
+                style={{ display: 'block', margin: 'auto' }}
+            />
             <div>
                 {isLoggingIn ? (
                     <div>

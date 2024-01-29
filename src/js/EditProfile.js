@@ -105,9 +105,9 @@ const EditProfile = () => {
 
     return (
         <div className="edit-profile-container">
-            <h1>User Profile</h1>
+            <h1>User profile</h1>
             <button onClick={startEditing} disabled={isEditing}>
-                Edit Profile
+                Edit profile
             </button>
             <h2>User data</h2>
             <form>

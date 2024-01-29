@@ -87,15 +87,15 @@ const User_Profile = () => {
                             <span className="user-profile-name">{userData.name+" "+userData.surname}</span>
                         </div>
                         <div>
-                            <label className="user-profile-label">Birth date:</label>
+                            <label className="user-profile-label">Birth date: </label>
                             <span className="user-profile-span">{userData.birthdayDate}</span>
                         </div>
                         <div>
-                            <label className="user-profile-label">Gender:</label>
+                            <label className="user-profile-label">Gender: </label>
                             <span className="user-profile-span">{userData.gender}</span>
                         </div>
                         <div>
-                            <label className="user-profile-label">About:</label>
+                            <label className="user-profile-label">About: </label>
                             <span className="user-profile-span">{userData.about}</span>
                         </div>
                     </div>

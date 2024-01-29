@@ -16,9 +16,19 @@ const Friends = () => {
         setFilter(e.target.value);
     };
 
-    const handleAcceptFriend = async (id) => {
+    const handleAcceptRequest = async (id) => {
         try {
             const response = await API.patch('/users_relations/' + id, { status: 'Friends' });
+            console.log('Zaktualizowano obiekt request:', response.data);
+        } catch (error) {
+            console.error('Błąd podczas aktualizacji obiektu request:', error);
+        }
+        fetchData();
+    };
+
+    const handleRemoveRequest = async (id) => {
+        try {
+            const response = await API.delete('/users_relations/' + id);
             console.log('Zaktualizowano obiekt request:', response.data);
         } catch (error) {
             console.error('Błąd podczas aktualizacji obiektu request:', error);
@@ -29,11 +39,10 @@ const Friends = () => {
 
     const handleRemoveFriend = async (id) => {
         try {
-            console.log(id)
             const response = await API.delete('/users_relations/' + id);
-            console.log('Zaktualizowano obiekt request:', response.data);
+            console.log('Zaktualizowano obiekt friends:', response.data);
         } catch (error) {
-            console.error('Błąd podczas aktualizacji obiektu request:', error);
+            console.error('Błąd podczas aktualizacji obiektu friends:', error);
         }
         fetchData();
     };
@@ -53,10 +62,6 @@ const Friends = () => {
         }
         fetchData();
     }
-
-    const handleSearchChange = (e) => {
-        setSearch(e.target.value);
-    };
 
     const fetchData = async () => {
         try {
@@ -117,13 +122,6 @@ const Friends = () => {
 
     return (
         <div className="friends-container">
-            <form>
-                <input
-                    type="text"
-                    onChange={handleSearchChange}
-                    placeholder="Search"
-                />
-            </form>
             <div>
                 <h2>Requests:</h2>
                 {requests.length > 0 ? (
@@ -131,12 +129,21 @@ const Friends = () => {
                         {requests.map(item => (
                             <li key={item.id}>
                                 {`${item.userRelationsFrom.name} ${item.userRelationsFrom.surname}`}
-                                <button
-                                    type="button"
-                                    variant="info"
-                                    onClick={() => handleAcceptFriend(item.id)}>
-                                    Accept
-                                </button>
+                                <div style={{ display: 'flex', gap: '10px' }}>
+                                    <button
+                                        type="button"
+                                        variant="info"
+                                        onClick={() => handleAcceptRequest(item.id)}>
+                                        Accept
+                                    </button>
+                                    <button
+                                        type="button"
+                                        variant="info"
+                                        onClick={() => handleRemoveRequest(item.id)}>
+                                        Remove
+                                    </button>
+                                </div>
+
                             </li>
                         ))}
                     </ul>
@@ -146,8 +153,8 @@ const Friends = () => {
 
             </div>
             <div>
-                <h2>Friends List:</h2>
-                {Array.isArray(friends) && friends.length > 0 ? (
+                <h2>Friends:</h2>
+                {friends.length > 0 ? (
                     <ul>
                         {friends.map(friend => (
                             <li key={friend.id}>
@@ -165,7 +172,7 @@ const Friends = () => {
                 )}
             </div>
             <div>
-                <h2>Add Friend:</h2>
+                <h2>Add friend:</h2>
                 {addFriends.length > 0 ? (
                     <ul>
                         {addFriends.map(user => (
